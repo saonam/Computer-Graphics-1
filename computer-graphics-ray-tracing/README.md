@@ -2,7 +2,7 @@
 
 > **To get started:** Clone this repository using:
 > 
->     git clone http://github.com/alecjacobson/computer-graphics-ray-tracing.git
+>     git clone http://github.com/dilevin/computer-graphics-ray-tracing.git
 >
 > **Do not fork:** Clicking "Fork" will create a _public_ repository. If you'd like to use GitHub while you work on your assignment, then mirror this repo as a new _private_ repository: https://stackoverflow.com/questions/10065526/github-how-to-make-a-fork-of-public-repository-private
 
@@ -11,7 +11,7 @@
 ### Read Sections 4.5-4.9 of _Fundamentals of Computer Graphics (4th Edition)_.
 
 Many of the classes and functions of this assignment are borrowed or adapted
-from the previous [ray casting assignment](https://github.com/alecjacobson/computer-graphics-ray-casting).
+from the previous [ray casting assignment](https://github.com/dilevin/computer-graphics-ray-casting).
 
 Unlike that assignment, this [ray
 tracer](https://en.wikipedia.org/wiki/Ray_tracing_(graphics)) will produce

@@ -41,7 +41,7 @@ int main(int argc, char * argv[])
       viewing_ray(camera,i,j,width,height,ray);
       
       // Shoot ray and collect color
-      raycolor(ray,1.0,objects,lights,4900,rgb);
+      raycolor(ray,1.0,objects,lights,0,rgb);
 
       // Write double precision color into image
       auto clamp = [](double s){ return std::max(std::min(s,1.0),0.0);};

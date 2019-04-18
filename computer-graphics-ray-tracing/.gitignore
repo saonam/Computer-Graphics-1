@@ -32,5 +32,4 @@
 *.swo
 *.swp
 build/*
-shared/*
 *.DS_Store

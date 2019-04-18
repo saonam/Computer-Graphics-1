@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.6)
 project(raytracing)
 
 # Prepare the build environment
-set(SHARED_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/shared/")
+set(SHARED_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/")
 include_directories(${LIBIGL_INCLUDE_DIRS})
 add_definitions(${LIBIGL_DEFINITIONS})
 option(USE_SOLUTION "Use solution"  OFF)
