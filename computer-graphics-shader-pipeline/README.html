@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link type="text/css" rel="stylesheet" href="css/github-markdown.css"/>
+<link rel="stylesheet" href="css/github-markdown.css">
+<style>
+.markdown-body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+}
+</head>
+<body>
+
+<pre><code>@media (max-width: 767px) {
+    .markdown-body {
+        padding: 15px;
+    }
+}
+</code></pre>
+
+<p></style>
+<article class="markdown-body"></p>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "all"} } });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<div style="display:none">
+<span class="math">\(\newcommand{\A}{\mat{A}}\)</span>
+<span class="math">\(\newcommand{\B}{\mat{B}}\)</span>
+<span class="math">\(\newcommand{\C}{\mat{C}}\)</span>
+<span class="math">\(\newcommand{\D}{\mat{D}}\)</span>
+<span class="math">\(\newcommand{\E}{\mat{E}}\)</span>
+<span class="math">\(\newcommand{\F}{\mat{F}}\)</span>
+<span class="math">\(\newcommand{\G}{\mat{G}}\)</span>
+<span class="math">\(\newcommand{\H}{\mat{H}}\)</span>
+<span class="math">\(\newcommand{\I}{\mat{I}}\)</span>
+<span class="math">\(\newcommand{\K}{\mat{K}}\)</span>
+<span class="math">\(\newcommand{\L}{\mat{L}}\)</span>
+<span class="math">\(\newcommand{\M}{\mat{M}}\)</span>
+<span class="math">\(\newcommand{\N}{\mat{N}}\)</span>
+<span class="math">\(\newcommand{\One}{\mathbf{1}}\)</span>
+<span class="math">\(\newcommand{\P}{\mat{P}}\)</span>
+<span class="math">\(\newcommand{\Q}{\mat{Q}}\)</span>
+<span class="math">\(\newcommand{\Rot}{\mat{R}}\)</span>
+<span class="math">\(\newcommand{\R}{\mathbb{R}}\)</span>
+<span class="math">\(\newcommand{\S}{\mathcal{S}}\)</span>
+<span class="math">\(\newcommand{\T}{\mat{T}}\)</span>
+<span class="math">\(\newcommand{\U}{\mat{U}}\)</span>
+<span class="math">\(\newcommand{\V}{\mat{V}}\)</span>
+<span class="math">\(\newcommand{\W}{\mat{W}}\)</span>
+<span class="math">\(\newcommand{\X}{\mat{X}}\)</span>
+<span class="math">\(\newcommand{\Y}{\mat{Y}}\)</span>
+<span class="math">\(\newcommand{\argmax}{\mathop{\text{argmax}}}\)</span>
+<span class="math">\(\newcommand{\argmin}{\mathop{\text{argmin}}}\)</span>
+<span class="math">\(\newcommand{\c}{\vec{c}}\)</span>
+<span class="math">\(\newcommand{\d}{\vec{d}}\)</span>
+<span class="math">\(\newcommand{\e}{\vec{e}}\)</span>
+<span class="math">\(\newcommand{\f}{\vec{f}}\)</span>
+<span class="math">\(\newcommand{\g}{\vec{g}}\)</span>
+<span class="math">\(\newcommand{\mat}[1]{\mathbf{#1}}\)</span>
+<span class="math">\(\newcommand{\min}{\mathop{\text{min}}}\)</span>
+<span class="math">\(\newcommand{\n}{\vec{n}}\)</span>
+<span class="math">\(\newcommand{\p}{\vec{p}}\)</span>
+<span class="math">\(\newcommand{\q}{\vec{q}}\)</span>
+<span class="math">\(\newcommand{\r}{\vec{r}}\)</span>
+<span class="math">\(\newcommand{\transpose}{{\mathsf T}}\)</span>
+<span class="math">\(\newcommand{\tr}[1]{\mathop{\text{tr}}{\left(#1\right)}}\)</span>
+<span class="math">\(\newcommand{\t}{\vec{t}}\)</span>
+<span class="math">\(\newcommand{\u}{\vec{u}}\)</span>
+<span class="math">\(\newcommand{\vec}[1]{\mathbf{#1}}\)</span>
+<span class="math">\(\newcommand{\x}{\vec{x}}\)</span>
+<span class="math">\(\newcommand{\y}{\vec{y}}\)</span>
+<span class="math">\(\newcommand{\z}{\vec{z}}\)</span>
+<span class="math">\(\renewcommand{\v}{\vec{v}}\)</span>
+</div>
+
+<h1 id="computergraphics–shaderpipeline">Computer Graphics – Shader Pipeline</h1>
+
+<blockquote>
+<p><strong>To get started:</strong> Clone this repository and all its <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">submodule</a> dependencies using:</p>
+
+<pre><code>git clone --recursive https://github.com/alecjacobson/computer-graphics-shader-pipeline.git
+</code></pre>
+</blockquote>
+
+<p><strong>Do not fork:</strong> Clicking &#8220;Fork&#8221; will create a <em>public</em> repository. If you&#8217;d like to use GitHub while you work on your assignment, then mirror this repo as a new <em>private</em> repository: https://stackoverflow.com/questions/10065526/github-how-to-make-a-fork-of-public-repository-private</p>
+
+<figure>
+<img src="images/earth.gif" alt="" />
+</figure>
+
+<h2 id="background">Background</h2>
+
+<blockquote>
+<h3 id="reviewchapters67andsections8.1-8.2offundamentalsofcomputergraphics4thedition.">Review chapters 6, 7 and sections 8.1&#8211;8.2 of <em>Fundamentals of Computer Graphics (4th Edition)</em>.</h3>
+</blockquote>
+
+<h3 id="readsections11.4-11.5andchapter17offundamentalsofcomputergraphics4thedition.">Read Sections 11.4&#8211;11.5 and Chapter 17 of <em>Fundamentals of Computer Graphics (4th Edition)</em>.</h3>
+
+<p>In this assignment, we will use the &#8220;real-time rendering&#8221; shader pipeline and
+procedural rendering to create interesting pictures.</p>
+
+<h3 id="glsl">GLSL</h3>
+
+<p>Your work will be implemented using the <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language">OpenGL shading language
+(glsl)</a>. In many ways,
+glsl code looks like C++ code. However, there are many builtin linear algebra
+types (e.g., <code>vec3</code> is a 3D-vector type) and geometric functions (e.g.,
+<code>dot(a,b)</code> computes the <a href="https://en.wikipedia.org/wiki/Dot_product">dot product</a>
+between vectors <code>a</code> and <code>b</code>. Since vectors are often used to represent spatial
+coordinates <em>or</em> colors. We can index the coordinates of a vector (<code>vec3 a</code>)
+using <code>a.r</code>, <code>a.g</code>, <code>a.b</code> or <code>a.x</code>, <code>a.y</code>, <code>a.z</code>. When working with <a href="https://en.wikipedia.org/wiki/3D_projection#Perspective_projection">perspective
+projection</a>
+it&#8217;s often useful to employ 4D <a href="https://en.wikipedia.org/wiki/Homogeneous_coordinates">homogeneous
+coordinates</a> vectors:
+<code>vec4</code> in glsl. Glsl has many builtin ways to work with differently sized
+vectors and matrices. For example, if we have <code>vec4 h</code> then we can write <code>vec3 p
+= h.xyz;</code> to grab the first three coordinates. Similarly, we could write: <code>vec4
+h = vec4(p,1.0)</code> to convert a 3D Cartesian point to a 4D homogeneous point.</p>
+
+<p>Fortunately, there are many online resources and googling a glsl-related
+question often returns helpful answers.</p>
+
+<h3 id="onthecpuside">On the CPU side</h3>
+
+<p>The shaders you write in this assignment will run on the
+<a href="https://en.wikipedia.org/wiki/Graphics_processing_unit">GPU</a>. Let&#8217;s breifly
+describe what&#8217;s happening on the
+<a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> side.</p>
+
+<p>A pseudo-code version of <code>main.cpp</code> might look like:</p>
+
+<pre><code>main()
+  initialize window
+  copy mesh vertex positions V and face indices F to GPU
+  while window is open
+    if shaders have not been compiled or files have changed 
+      compile shaders and send to GPU
+    send &quot;uniform&quot; data to GPU
+    set all pixels to background color
+    tell GPU to draw mesh
+    sleep a few milliseconds
+</code></pre>
+
+<h4 id="window">Window</h4>
+
+<p>Creating a window is clearly something that will depend on the operating system
+(e.g., Mac OS X, Linux, Windows). This assignment, like many small scale
+graphics programs or games, uses an open source windowing toolkit called
+<a href="https://en.wikipedia.org/wiki/GLFW">glfw</a>. It works on all major operating
+systems. Once the window is open we have access to its contents as an RGB image.
+The job of our programs are to fill in all the pixels of this image with colors.
+The windowing toolkit also handles interactions with the mouse and keyboard as
+well as window resizing.</p>
+
+<h4 id="shadercompilation">Shader compilation</h4>
+
+<p>Unlike your C++ code, shaders are compiled <em>at runtime</em>. This has a nice
+advantage that you can change your shaders without restarting the main program.
+So long as the change is noticed and the shaders are recompiled, the rendering
+will be immediately updated.</p>
+
+<p>Compilation errors (usually syntax errors) will be output from the main program
+and the window will turn black (background color). For example, if your
+<em>fragment shader</em> contained:</p>
+
+<pre><code>#version 410 core
+in vec3 pos_fs_in;
+out vec3 color;
+void main()
+{
+  color = pos_fs_in.x;
+}
+</code></pre>
+
+<p>You would see an error printed to the screen:</p>
+
+<pre><code>ERROR: failed to compile fragment shader
+ERROR: 0:6: Incompatible types (vec3 and float) in assignment (and no available implicit conversion)
+
+ERROR: One or more attached shaders not successfully compiled
+
+ERROR: Failed to link shader program
+</code></pre>
+
+<p>If you change this file, the main program should immediately notice the change
+before drawing the next frame. If successful there will be no error message and
+the screen may now draw something interesting.</p>
+
+<h4 id="dataonthegpu">Data on the GPU</h4>
+
+<p>From the perspective of the shader pipeline, data on the GPU is separated into
+different types. For example, when we send the mesh vertex positions to the GPU
+we&#8217;re associating one 3D position <em>per vertex</em>. This data is considered an
+&#8220;attribute&#8221; of each vertex. Each vertex invokes a single execution of the vertex
+shader and its corresponding position is given as the <code>in vec3 pos_vs_in;</code>
+variable. The output of the vertex shader will be &#8220;varying&#8221; depending on the
+input and computation conducted. Your program is responsible for setting this
+output value in <code>out vec3 pos_cs_in</code>. This variable is named ending with
+<code>_cs_in</code> because it will in turn be used as input to the next shader in the
+pipeline <em>tessellation control shader</em>.</p>
+
+<p>Small amounts of data that is constant and independent of the particular
+vertex/tessellation patch/fragment being processed is labeled as &#8220;uniform&#8221; data.
+The prototypical example of this is the perspective projection matrix: <code>uniform
+mat4 proj</code>. Uniform data is usually changed once per draw frame (e.g., <code>uniform
+float time_since_start</code> is updated with the number of seconds since the start of
+the program) or once per &#8220;object&#8221; (e.g., <code>uniform bool is_moon;</code> is set based on
+whether we&#8217;re drawing the first or second object in our scene).</p>
+
+<p>Large amounts of data that may be randomly accessed by shaders is stored in
+&#8220;texture&#8221; memory (e.g., color texture images). This data must be accessed by
+sampling specific pixel values based on a given 2D locations (e.g., the U.V.
+mapping of a fragment).</p>
+
+<h3 id="tessellationcontrolshader">Tessellation Control Shader</h3>
+
+<p>The tessellation control shader determines how to subdivide each input &#8220;patch&#8221;
+(i.e., triangle). Unlike the subdivision we saw with <a href="https://en.wikipedia.org/wiki/Subdivision_surface">subdivision
+surfaces</a>, the subdivision is
+determined independently for each triangle and <em>not</em> called recursively.
+The exact pattern of the resulting triangulation is left largely to
+implementation. As the shader programmer, you have control over:</p>
+
+<ul>
+<li>the number of new edges each input each should split into
+(<code>gl_TessLevelOuter[1] = 5</code> means the edge across from vertex <code>1</code> (i.e., the
+edge between vertices <code>0</code> and <code>2</code>) should be split into 5 edges); and</li>
+<li>the number of edges to place toward the center of the patch
+(<code>gl_TessLevelInner[0] = 5</code> would be a good choice if
+<code>gl_TessLevelOuter[...] = 5</code> and a regular tessellation was desired).</li>
+</ul>
+
+<p>Unlike the vertex or fragment shader, the tessellation control shader has access
+to attribute information at <em>all</em> of the vertices of a triangle. The main
+responsibility of this shader is setting the <code>gl_TessLevelOuter</code> and
+<code>gl_TessLevelInner</code> variables.</p>
+
+<blockquote>
+<p><strong>Question:</strong> If the amount of subdivision along each edge is determined
+independently for each triangle, how can we make sure neighboring triangles
+subdivide their shared edge the same amount?</p>
+
+<p><strong>Hint:</strong> ✌️</p>
+</blockquote>
+
+<h3 id="tessellationevaluationshader">Tessellation Evaluation Shader</h3>
+
+<p>The tessellation <em>evaluation</em> shader takes the result of the tessellation that
+the tessellation <em>control</em> shader has specified. This shader is called once for
+every vertex output during tessellation (including original corners). It has
+access to the attribute information of the original corners (e.g., in our code
+<code>in vec3 pos_es_in[]</code>) and a special variable <code>gl_TessCoord</code> containing the
+<a href="https://en.wikipedia.org/wiki/Barycentric_coordinate_system">barycentric
+coordinates</a> of the
+current vertex. Using this information, it is possible to interpolate
+information stored at the original corners onto the current vertex: for example,
+the 3D position. Like the vertex and tessellation control shader, this shader
+can change the 3D position of a vertex. This is the <em>last opportunity</em> to do
+that, since the fragment shader cannot.</p>
+
+<h3 id="howcomeicantuseinclude">How come I can&#8217;t use <code>#include</code>?</h3>
+
+<p>Our glsl shader programs are not compiled from files. Instead the
+CPU-side program must read the file contents into memory as strings and provide
+the raw strings to the shader compiler. Unfortunately, this means there is no
+<code>#include</code> preprocessor directive and sharing code across different shaders is a
+burden.</p>
+
+<p>In this assignment, we will use a <code>.json</code> file to collect the different files
+whose contents are <em><strong>concatenated</strong></em> to form the input string to be compiled
+for each shader. For example, in <code>data/test-01.json</code> you&#8217;ll see:</p>
+
+<pre><code>{
+  &quot;vertex&quot;: [ &quot;../src/version410.glsl&quot;,&quot;../src/pass-through.vs&quot;],
+  &quot;tess_control&quot;: [ &quot;../src/version410.glsl&quot;,&quot;../src/pass-through.tcs&quot;],
+  &quot;tess_evaluation&quot;: [ &quot;../src/version410.glsl&quot;,&quot;../src/pass-through.tes&quot;],
+  &quot;fragment&quot;: [ &quot;../src/version410.glsl&quot;,&quot;../src/pass-through.fs&quot;]
+}
+</code></pre>
+
+<p>This indicates that the string for the vertex shader is the concatenation of two
+(2) files <code>../src/version410.glsl</code> and then <code>&quot;../src/pass-through.vs&quot;</code>.
+Similarly, for each of the other shaders.</p>
+
+<h3 id="shaderdebugging">Shader debugging</h3>
+
+<p>Debugging shader programs must be done visually. Since we only see the result of
+<em>all</em> computation, we can use the shader pipeline&#8217;s ability to set screen colors
+to debug <em>all</em> computation simultaneously. For example, when debugging the
+fragment shader we can check all values at once by setting the pixel color to a
+value we expect (or don&#8217;t expect) depending on the computation. A few useful
+commands come in handy:</p>
+
+<p><code>color = 0.5+0.5*n;</code> will set the color based on the normal.</p>
+
+<figure>
+<img src="images/normal-debug.png" alt="" />
+</figure>
+
+<p><code>color = vec3(0.5,0.5,0)+vec3(0.5,0.5,0)*view_pos_fs_in.xyz</code> will set the color based on the 2D position.</p>
+
+<figure>
+<img src="images/position-debug.png" alt="" />
+</figure>
+
+<p><code>color = (1+(view_pos_fs_in.z - -3)/5)*vec3(1,1,1);</code> will set the color based on
+the distance to the camera in the z-direction.</p>
+
+<figure>
+<img src="images/distance-debug.png" alt="" />
+</figure>
+
+<p><code>color = vec3(float(is_moon),1,0);</code> will set the color to yellow or green based
+on a boolean value (in this case <code>is_moon</code>).</p>
+
+<figure>
+<img src="images/bool-debug.png" alt="" />
+</figure>
+
+<h2 id="bumpandnormalmaps">Bump and normal maps</h2>
+
+<p>A <strong>bump map</strong> is a mapping from a surface point to a displacement along the
+normal direction. A <strong>normal map</strong> is a mapping from a surface point to a unit
+normal vector. In a mathematical sense, a normal map is non-sense. A point on a
+surface has a specific normal completely determined by its local geometry. The
+normal is the direction that goes in the <em>most outward</em> direction from the
+surface. That is, the normal is perpendicular to the surface. Since a surface
+is two dimensional, the directions that <em>stay on</em> the surface are spanned by a
+two dimensional <em>tangent plane</em>.</p>
+
+<p>Normal mapping is useful in computer graphics because we can drape the
+appearance of a complex surface on top a low resolution and simple one. To
+create a consistent and believable looking normal map, we can first generate a
+plausible bump map. Each point <span class="math">\(\mathbf{p}∈ \mathbb{R}³\)</span> on the surface is moved to a new
+position <span class="math">\(\mathbf{\tilde{p}} ∈ \mathbb{R}³\)</span>:</p>
+
+<p><span class="math">\[
+\mathbf{\tilde{p}}(\mathbf{p}) := \mathbf{p} + h(\mathbf{p}) \ \mathbf{\hat{n}}(\mathbf{p}) ,
+\]</span>
+where <span class="math">\(h : \mathbb{R}³ → \mathbb{R}\)</span> is the bump height amount function (could
+be negative) and <span class="math">\(\mathbf{\hat{n}}(\mathbf{p}) : \mathbb{R}³ → \mathbb{R}³\)</span> is the
+<em>mathematically</em> correct normal at <span class="math">\(\mathbf{p}\)</span>.</p>
+
+<p>If our bump height <span class="math">\(h\)</span> is a smooth function over the surface, we can compute the
+<em>perceived</em> normal vector <span class="math">\(\mathbf{\tilde{n}}\)</span> by taking a small <a href="https://en.wikipedia.org/wiki/Finite_difference">finite
+difference</a> of the 3D position:</p>
+
+<p><span class="math">\[
+\mathbf{\tilde{n}} = \frac{∂\ \mathbf{p}}{∂\ \mathbf{T}} ×
+\frac{∂\ \mathbf{p}}{∂\ \mathbf{B}} ≈ 
+\left(\frac{\mathbf{\tilde{p}(\mathbf{p} + ε \mathbf{T}})-\mathbf{\tilde{p}}(\mathbf{p})}{ε}\right) ×
+\left(\frac{\mathbf{\tilde{p}(\mathbf{p} + ε \mathbf{B}})-\mathbf{\tilde{p}}(\mathbf{p})}{ε}\right)
+\]</span>
+where <span class="math">\(\mathbf{T},\mathbf{B}∈ \mathbb{R}³\)</span> are orthogonal <a href="https://en.wikipedia.org/wiki/Tangent_vector">tangent and
+bi-tangent vectors</a> in the tangent
+plane at <span class="math">\(\mathbf{p}\)</span> and <span class="math">\(ε\)</span> is a small number (e.g., <code>0.0001</code>). By abuse of
+notation, we&#8217;ll make sure that this approximate perceived normal is unit length
+by dividing by its length:</p>
+
+<p><span class="math">\[
+\mathbf{\tilde{n}} ←
+\frac{\mathbf{\tilde{n}}}{‖\mathbf{\tilde{n}}‖}.
+\]</span></p>
+
+<blockquote>
+<p><strong>Question:</strong> Can we always recover <em>some</em> orthogonal tangent vectors <span class="math">\(\mathbf{T}\)</span> and <span class="math">\(\mathbf{B}\)</span> from
+the unit normal
+<span class="math">\(\mathbf{n}\)</span> ?</p>
+
+<p><strong>Hint:</strong> ☝️</p>
+</blockquote>
+
+<h2 id="tasks">Tasks</h2>
+
+<p>There are no <a href="https://stackoverflow.com/a/19709740/148668">header files</a>.
+Accordingly, this assignment is organized a bit differently. The <code>src/</code>
+directory contains glsl files whose contents should be completed or replaced.
+Some of the functions have an element of creative freedom (e.g.,
+<code>src/bump_position.glsl</code>), while others are have a well-defined specification
+(e.g., <code>src/identity.glsl</code>).</p>
+
+<p>Since glsl does not support <code>#include</code>, the comments may hint that a previously
+defined function can/should/must be used by writing <code>// expects: ...</code>.</p>
+
+<p>You may check the corresponding <code>.json</code> example file to see specifically which
+glsl files are loaded (and in which order) for each test program.</p>
+
+<p>Unless otherwise noted, <em><strong>do not declare new functions</strong></em>. </p>
+
+<h3 id="whitelist">White list</h3>
+
+<ul>
+<li><a href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml"><code>mix</code></a></li>
+<li><a href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/normalize.xhtml"><code>normalize</code></a></li>
+<li><a href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/length.xhtml"><code>length</code></a></li>
+<li><a href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml"><code>clamp</code></a></li>
+<li><a href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sin.xhtml"><code>sin</code></a></li>
+<li><a href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cos.xhtml"><code>cos</code></a></li>
+<li><a href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/abs.xhtml"><code>abs</code></a></li>
+<li><a href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/pow.xhtml"><code>pow</code></a></li>
+</ul>
+
+<h3 id="blacklist">Black list</h3>
+
+<ul>
+<li><code>noise1</code></li>
+<li><code>noise2</code></li>
+<li><code>noise3</code></li>
+<li><code>noise4</code></li>
+</ul>
+
+<p>This assignment works best if you implement the following tasks <em>in order</em>.</p>
+
+<p>Before editing anything be sure that your opengl and shader setup is correct. If you run <code>./shaderpipeline ../data/test-01.json</code> you should see this
+image: </p>
+
+<figure>
+<img src="images/test-01.png" alt="" />
+</figure>
+
+<h3 id="srcidentity.glsl"><code>src/identity.glsl</code></h3>
+
+<h3 id="srcuniform_scale.glsl"><code>src/uniform_scale.glsl</code></h3>
+
+<h3 id="srctranslate.glsl"><code>src/translate.glsl</code></h3>
+
+<h3 id="srcrotate_about_y.glsl"><code>src/rotate_about_y.glsl</code></h3>
+
+<h3 id="srcmodel.glsl"><code>src/model.glsl</code></h3>
+
+<h3 id="srcmodel_view_projection.vs"><code>src/model_view_projection.vs</code></h3>
+
+<h3 id="srcblue_and_gray.fs"><code>src/blue_and_gray.fs</code></h3>
+
+<p>With these implemented you should now be able to run <code>./shaderpipeline
+../data/test-02.json</code> and see an animation of a gray moon orbiting around a blue
+planet: </p>
+
+<figure>
+<img src="images/test-02.gif" alt="" />
+</figure>
+
+<p>If you press <code>L</code> this should switch to a <a href="">wireframe</a> rendering:</p>
+
+<figure>
+<img src="images/test-02-wireframe.gif" alt="" />
+</figure>
+
+<h3 id="src5.tcs"><code>src/5.tcs</code></h3>
+
+<p>Running <code>./shaderpipeline ../data/test-03.json</code> and pressing <code>L</code> should produce an
+animation of a gray moon orbiting around a blue planet in wireframe with more
+triangles: </p>
+
+<figure>
+<img src="images/test-03-wireframe.gif" alt="" />
+</figure>
+
+<h3 id="snap_to_sphere.tes"><code>snap_to_sphere.tes</code></h3>
+
+<p>Move your model-view-projection operations from the vertex shader (e.g.,
+<code>model_view_projection.vs</code>) to the tessellation evaluation shader. In addition,
+snap the vertices of each shape to the unit sphere before applying these
+transformations. This gives your shapes a round appearance if you run
+<code>./shaderpipeline ../data/test-04.json</code>: </p>
+
+<figure>
+<img src="images/test-04.gif" alt="" />
+</figure>
+
+<h3 id="blinn_phong.glsl"><code>blinn_phong.glsl</code></h3>
+
+<h3 id="lit.fs"><code>lit.fs</code></h3>
+
+<p>Running <code>./shaderpipeline ../data/test-05.json</code> adds light to the scene and we
+see a smooth appearance with specular highlights: </p>
+
+<figure>
+<img src="images/test-05.gif" alt="" />
+</figure>
+
+<h3 id="random_direction.glsl"><code>random_direction.glsl</code></h3>
+
+<h3 id="smooth_step.glsl"><code>smooth_step.glsl</code></h3>
+
+<h3 id="perlin_noise.glsl"><code>perlin_noise.glsl</code></h3>
+
+<h3 id="procedural_color.glsl"><code>procedural_color.glsl</code></h3>
+
+<p>Be creative! Your procedural colored shape does not need to look like marble
+specifically and does not need to match the example. Mix and match different
+noise frequencies and use <a href="https://en.wikipedia.org/wiki/Function_composition">function
+composition</a> to create an
+interesting, complex pattern.</p>
+
+<p>Running <code>./shaderpipeline ../data/test-06.json</code> adds a procedural <em>color</em> to the
+objects. The color should <em><strong>not</strong></em> change based on the view or model
+transformation. For example, this animation attempts to recreate a
+<a href="https://en.wikipedia.org/wiki/Marble">marble</a> texture: </p>
+
+<figure>
+<img src="images/test-06.gif" alt="" />
+</figure>
+
+<h3 id="improved_smooth_step.glsl"><code>improved_smooth_step.glsl</code></h3>
+
+<h3 id="improved_perlin_noise.glsl"><code>improved_perlin_noise.glsl</code></h3>
+
+<h3 id="bump_height.glsl"><code>bump_height.glsl</code></h3>
+
+<h3 id="bump_position.glsl"><code>bump_position.glsl</code></h3>
+
+<h3 id="tangent.glsl"><code>tangent.glsl</code></h3>
+
+<h3 id="bump.fs"><code>bump.fs</code></h3>
+
+<p>Be creative! Your bumpy shape does not need to match the example.</p>
+
+<p>Running <code>./shaderpipeline ../data/test-07.json</code> adds a <a href="https://en.wikipedia.org/wiki/Normal_mapping">normal
+map</a> determined by differentiating
+a procedural <a href="https://en.wikipedia.org/wiki/Bump_mapping">bump map</a>. The color
+should <em><strong>not</strong></em> change based on the view or model transformation. For example,
+this animation attempts to recreate the (very) bumpy appearance of planets and
+moons: </p>
+
+<figure>
+<img src="images/test-07.gif" alt="" />
+</figure>
+
+<p>For this file, you <em><strong>may</strong></em> declare new functions: declare them directly at the
+top of <code>bump.fs</code>; do not modify the .json files.</p>
+
+<h3 id="planet.fs"><code>planet.fs</code></h3>
+
+<p>For this file, you <em><strong>may</strong></em> declare new functions: declare them directly at the
+top of <code>planet.fs</code>; do not modify the .json files.</p>
+
+<p>Be creative! Your planets do not need to look like the earth/moon and do not
+need to look like the example planets.</p>
+
+<blockquote>
+<p><strong>Hint:</strong> Sprinkle noise on <em>everything</em>: diffuse color, specular color,
+normals, specular exponents, color over time.</p>
+</blockquote>
+
+<p>Running <code>./shaderpipeline ../data/test-08.json</code> should display a creative planet
+scene. For example: </p>
+
+<figure>
+<img src="images/test-08.gif" alt="" />
+</figure>
+
+</body>
+</html>

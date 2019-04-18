@@ -1,0 +1,41 @@
+{
+  "camera": {
+    "type": "perspective",
+    "focal_length": 2.8,
+    "eye": [9.6,0.3,10],
+    "up": [-0.7071067812,0,0.7071067812],
+    "look": [-0.7071067812,0,-0.7071067812],
+    "height": 1,
+    "width": 1.7777777778
+  },
+
+  "objects": [
+    {
+      "type": "plane",
+      "point": [0,0,-1],
+      "normal": [0,0,1]
+    },
+    {
+      "type": "sphere",
+      "radius": 1,
+      "center": [0,0,1]
+    },
+    {
+      "type": "sphere",
+      "radius": 1,
+      "center": [2,0,1]
+    },
+    {
+      "type": "sphere",
+      "radius": 1,
+      "center": [1,1.7321,1]
+    },
+    {
+      "type": "sphere",
+      "radius": 1,
+      "center": [1,0.57735,2.633]
+    }
+  ]
+}
+
+

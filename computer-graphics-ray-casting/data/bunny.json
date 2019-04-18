@@ -1,0 +1,44 @@
+{
+  "camera": {
+    "type": "perspective",
+    "focal_length": 1,
+    "eye": [0,0,2],
+    "up": [0,1,0],
+    "look": [0,0,-1],
+    "height": 1,
+    "width": 1.7777777778
+  },
+
+  "objects": [
+    {
+      "type": "soup",
+      "stl": "bunny.stl"
+    },
+    {
+      "type": "plane",
+      "point": [-1,0,0],
+      "normal": [1,0,0]
+    },
+    {
+      "type": "plane",
+      "point": [0,0,-1],
+      "normal": [0,0,1]
+    },
+    {
+      "type": "plane",
+      "point": [0,1,0],
+      "normal": [0,-1,0]
+    },
+    {
+      "type": "plane",
+      "point": [1,0,0],
+      "normal": [-1,0,0]
+    },
+    {
+      "type": "plane",
+      "point": [0,-1,0],
+      "normal": [0,1,0]
+    }
+  ]
+}
+

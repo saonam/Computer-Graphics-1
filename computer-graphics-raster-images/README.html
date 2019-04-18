@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link type="text/css" rel="stylesheet" href="css/github-markdown.css"/>
+<link rel="stylesheet" href="css/github-markdown.css">
+<style>
+.markdown-body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+}
+</head>
+<body>
+
+<pre><code>@media (max-width: 767px) {
+    .markdown-body {
+        padding: 15px;
+    }
+}
+</code></pre>
+
+<p></style>
+<article class="markdown-body"></p>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "all"} } });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<div style="display:none">
+<span class="math">\(\newcommand{\A}{\mat{A}}\)</span>
+<span class="math">\(\newcommand{\B}{\mat{B}}\)</span>
+<span class="math">\(\newcommand{\C}{\mat{C}}\)</span>
+<span class="math">\(\newcommand{\D}{\mat{D}}\)</span>
+<span class="math">\(\newcommand{\E}{\mat{E}}\)</span>
+<span class="math">\(\newcommand{\F}{\mat{F}}\)</span>
+<span class="math">\(\newcommand{\G}{\mat{G}}\)</span>
+<span class="math">\(\newcommand{\H}{\mat{H}}\)</span>
+<span class="math">\(\newcommand{\I}{\mat{I}}\)</span>
+<span class="math">\(\newcommand{\J}{\mat{J}}\)</span>
+<span class="math">\(\newcommand{\K}{\mat{K}}\)</span>
+<span class="math">\(\newcommand{\L}{\mat{L}}\)</span>
+<span class="math">\(\newcommand{\M}{\mat{M}}\)</span>
+<span class="math">\(\newcommand{\N}{\mat{N}}\)</span>
+<span class="math">\(\newcommand{\One}{\mathbf{1}}\)</span>
+<span class="math">\(\newcommand{\P}{\mat{P}}\)</span>
+<span class="math">\(\newcommand{\Q}{\mat{Q}}\)</span>
+<span class="math">\(\newcommand{\Rot}{\mat{R}}\)</span>
+<span class="math">\(\newcommand{\R}{\mathbb{R}}\)</span>
+<span class="math">\(\newcommand{\S}{\mathcal{S}}\)</span>
+<span class="math">\(\newcommand{\T}{\mat{T}}\)</span>
+<span class="math">\(\newcommand{\U}{\mat{U}}\)</span>
+<span class="math">\(\newcommand{\V}{\mat{V}}\)</span>
+<span class="math">\(\newcommand{\W}{\mat{W}}\)</span>
+<span class="math">\(\newcommand{\X}{\mat{X}}\)</span>
+<span class="math">\(\newcommand{\Y}{\mat{Y}}\)</span>
+<span class="math">\(\newcommand{\argmax}{\mathop{\text{argmax}}}\)</span>
+<span class="math">\(\newcommand{\argmin}{\mathop{\text{argmin}}}\)</span>
+<span class="math">\(\newcommand{\a}{\vec{a}}\)</span>
+<span class="math">\(\newcommand{\b}{\vec{b}}\)</span>
+<span class="math">\(\newcommand{\c}{\vec{c}}\)</span>
+<span class="math">\(\newcommand{\d}{\vec{d}}\)</span>
+<span class="math">\(\newcommand{\e}{\vec{e}}\)</span>
+<span class="math">\(\newcommand{\f}{\vec{f}}\)</span>
+<span class="math">\(\newcommand{\g}{\vec{g}}\)</span>
+<span class="math">\(\newcommand{\mat}[1]{\mathbf{#1}}\)</span>
+<span class="math">\(\newcommand{\min}{\mathop{\text{min}}}\)</span>
+<span class="math">\(\newcommand{\m}{\vec{m}}\)</span>
+<span class="math">\(\newcommand{\n}{\vec{n}}\)</span>
+<span class="math">\(\newcommand{\p}{\vec{p}}\)</span>
+<span class="math">\(\newcommand{\q}{\vec{q}}\)</span>
+<span class="math">\(\newcommand{\r}{\vec{r}}\)</span>
+<span class="math">\(\newcommand{\transpose}{{\mathsf T}}\)</span>
+<span class="math">\(\newcommand{\tr}[1]{\mathop{\text{tr}}{\left(#1\right)}}\)</span>
+<span class="math">\(\newcommand{\s}{\vec{s}}\)</span>
+<span class="math">\(\newcommand{\t}{\vec{t}}\)</span>
+<span class="math">\(\newcommand{\u}{\vec{u}}\)</span>
+<span class="math">\(\newcommand{\vec}[1]{\mathbf{#1}}\)</span>
+<span class="math">\(\newcommand{\x}{\vec{x}}\)</span>
+<span class="math">\(\newcommand{\y}{\vec{y}}\)</span>
+<span class="math">\(\newcommand{\z}{\vec{z}}\)</span>
+<span class="math">\(\newcommand{\0}{\vec{0}}\)</span>
+<span class="math">\(\renewcommand{\v}{\vec{v}}\)</span>
+<!-- https://github.com/mathjax/MathJax/issues/1766 -->
+<span class="math">\(\renewcommand{\hat}[1]{\widehat{#1}}\)</span>
+</div>
+
+<h1 id="computergraphics–rasterimages">Computer Graphics – Raster Images</h1>
+
+<blockquote>
+<p><strong>To get started:</strong> Clone this repository and all its <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">submodule</a> dependencies using:</p>
+
+<pre><code>git clone --recursive https://github.com/alecjacobson/computer-graphics-raster-images.git
+</code></pre>
+</blockquote>
+
+<p><strong>Do not fork:</strong> Clicking &#8220;Fork&#8221; will create a <em>public</em> repository. If you&#8217;d like to use GitHub while you work on your assignment, then mirror this repo as a new <em>private</em> repository: https://stackoverflow.com/questions/10065526/github-how-to-make-a-fork-of-public-repository-private</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Welcome to Computer Graphics! The main purpose of this assignment will be to get
+you up and running with C++ and the cmake build setup used for our assignments.</p>
+
+<h3 id="prerequisiteinstallation">Prerequisite installation</h3>
+
+<p>On all platforms, we will assume you have installed cmake and a modern c++
+compiler on Mac OS X<a href="#¹macusers">¹</a>, Linux<a href="#²linuxusers">²</a>, or
+Windows<a href="#³windowsusers">³</a>.</p>
+
+<p>We also assume that you have cloned this repository using the <code>--recursive</code>
+flag (if not then issue <code>git submodule update --init --recursive</code>). </p>
+
+<h3 id="layout">Layout</h3>
+
+<p>All assignments will have a similar directory and file layout:</p>
+
+<pre><code>README.md
+CMakeLists.txt
+main.cpp
+include/
+  function1.h
+  function2.h
+  ...
+src/
+  function1.cpp
+  function2.cpp
+  ...
+data/
+  ...
+...
+</code></pre>
+
+<p>The <code>README.md</code> file will describe the background, contents and tasks of the
+assignment.</p>
+
+<p>The <code>CMakeLists.txt</code> file setups up the cmake build routine for this
+assignment.</p>
+
+<p>The <code>main.cpp</code> file will include the headers in the <code>include/</code> directory and
+link to the functions compiled in the <code>src/</code> directory. This file contains the
+<code>main</code> function that is executed when the program is run from the command line.</p>
+
+<p>The <code>include/</code> directory contains one file for each function that you will
+implement as part of the assignment. <strong><em>Do not change</em></strong> these files.</p>
+
+<p>The <code>src/</code> directory contains <em>empty implementations</em> of the functions
+specified in the <code>include/</code> directory. This is where you will implement the
+parts of the assignment.</p>
+
+<p>The <code>data/</code> directory contains <em>sample</em> input data for your program. Keep in
+mind you should create your own test data to verify your program as you write
+it. It is not necessarily sufficient that your program <em>only</em> works on the given
+sample data.</p>
+
+<h2 id="compilation">Compilation</h2>
+
+<p>This and all following assignments will follow a typical cmake/make build
+routine. Starting in this directory, issue:</p>
+
+<pre><code>mkdir build
+cd build
+cmake ..
+</code></pre>
+
+<p>If you are using Mac or Linux, then issue:</p>
+
+<pre><code>make
+</code></pre>
+
+<p>If you are using Windows, then running <code>cmake ..</code> should have created a Visual Studio solution file
+called <code>raster.sln</code> that you can open and build from there. Building the raster project will generate an .exe file.</p>
+
+<p>Why don&#8217;t you try this right now?</p>
+
+<h2 id="execution">Execution</h2>
+
+<p>Once built, you can execute the assignment from inside the <code>build/</code> using </p>
+
+<pre><code>./raster
+</code></pre>
+
+<h2 id="background">Background</h2>
+
+<blockquote>
+<p>Every assignment, including this one, will start with a <strong>Background</strong>
+section. This will cite a chapter of the book to read or review the math and
+algorithms behind the task in the assignment. Students following the lectures
+should already be familiar with this material.</p>
+</blockquote>
+
+<h3 id="readchapter3offundamentalsofcomputergraphics4thedition.">Read Chapter 3 of <em>Fundamentals of Computer Graphics (4th Edition)</em>.</h3>
+
+<p>The most common digital representation of a color image is a 2D array of
+red/green/blue intensities at pixels. Since each entry in the array is actually
+a 3-vector of color values, we can interpret an image as a 3-tensor or 3D array.
+Memory on the computer is addressed linear, so an RGB image with a certain
+<code>width</code> and <code>height</code> will be represented as <code>width*height*3</code> numbers. How these
+numbers are ordered is a matter of convention. In our assignment we use the
+convention that the red value of pixel in the top-left corner comes first, then
+its green value, then its blue value, and then the rgb values of its neighbor to
+the right and so on <em>across</em> the row of pixels, and then moving to the next row
+<em>down</em> the columns of rows.</p>
+
+<blockquote>
+<p>Q: Suppose you have a 767×772 rgb image stored in an array called <code>data</code>. How
+would you access the green value at the pixel on the 36th row and 89th
+column?</p>
+
+<p>A: <code>data[1 + 3*(88+767*35)]</code> (Remember C++ starts counting with <code>0</code>).</p>
+</blockquote>
+
+<h3 id="alphamap">Alpha map</h3>
+
+<p>Natural images (e.g., photographs) only require color information, but to
+manipulate images it is often useful to also store a value representing how much
+of a pixel is &#8220;covered&#8221; by the given color. Intuitively this value (called alpha
+or <span class="math">\(α\)</span><a href="#⁴latex">⁴</a>) represents how opaque (the opposite of <em>transparent</em>) each pixel is.
+When we store rgb + α image as a <em>4</em>-channel rgba image. Just like rgb images,
+rgba images are 3D arrays unrolled into a linear array in memory.</p>
+
+<p>.png files can store rgba images, whereas our simpler .ppm file format only
+stores grayscale or rgb images.</p>
+
+<h3 id=".ppmfiles">.ppm files</h3>
+
+<p>We&#8217;ll use a very basic <em>uncompressed</em> image file format to write out the results
+of our tasks: the <a href="https://en.wikipedia.org/wiki/Netpbm_format#File_format_description">.ppm</a>.</p>
+
+<p>Like many image file formats, .ppm uses 8 bits per color value. Color
+intensities are represented as an integer between <code>0</code> (0% intensity) and <code>255</code>
+(100% intensity). In our programs we will use <code>unsigned char</code> to represent these
+values when reading, writing and doing simple operations. For numerically
+sensitive computations (e.g., conversion between rgb and hsv), it is convenient
+to convert values to decimal representations using <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">double precision floating
+point
+numbers</a>
+<code>0</code> is converted to <code>0.0</code> and <code>255</code> to <code>1.0</code>.</p>
+
+<h2 id="grayscaleimages">Grayscale Images</h2>
+
+<p>Surprisingly there are
+<a href="https://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale">many</a>
+acceptable and reasonable ways to convert a color image into a
+<a href="https://en.wikipedia.org/wiki/Grayscale">grayscale</a> (&#8220;black and white&#8221;) image.
+The complexity of each method scales with the amount that method accommodates
+for human perception. For example, a very naive method is to average red, green
+and blue intensities. A slightly better (and very popular method) is to take a
+weighted average giving higher priority to green: </p>
+
+<p>$$
+i = 0.2126 r + 0.7152 g + 0.0722 b.
+$$</p>
+
+<blockquote>
+<p>Q: Why are humans more sensitive to green?</p>
+
+<p>Hint: 🐒</p>
+</blockquote>
+
+<h2 id="mosaicimages">Mosaic images</h2>
+
+<p>The raw color measurements made by modern digital cameras are typically stored
+with a single color channel per pixel. This information is stored as a seemingly
+1-channel image, but with an understood convention for interpreting each pixel
+as the red, green or blue intensity value given some pattern. The most common is
+the <a href="https://en.wikipedia.org/wiki/Bayer_filter">Bayer pattern</a>. In this
+assignment, we&#8217;ll assume the top left pixel is green, its right neighbor is blue
+and neighbor below is red, and its
+<a href="https://en.wiktionary.org/wiki/kitty-corner#Adverb">kitty-corner</a> neighbor is
+also green.</p>
+
+<blockquote>
+<p>Q: Why are more sensors devoted to green?</p>
+
+<p>Hint: 🐒</p>
+</blockquote>
+
+<p>To <em>demosaic</em> an image, we would like to create a full rgb image without
+downsampling the image resolution. So for each pixel, we&#8217;ll use the exact color
+sample when it&#8217;s available and average available neighbors (in all 8 directions)
+to fill in missing colors. This simple <a href="https://www.ics.uci.edu/~majumder/PHOTO/DemosaicingAndWhiteBalancing.pdf">linear
+interpolation-based</a>
+method has some blurring artifacts and can be improved with more complex
+methods.</p>
+
+<figure>
+<img src="images/bayer.png" alt="The Bayer-pattern image on the left has exact measurements of red, green and
+blue colors at different pixels. The missing color information at each pixel
+needs to be interpolated from neighbors (4 or 2). Just do something
+reasonable for pixels on the very boundary of the image. image source " />
+<figcaption>The Bayer-pattern image on the left has &#8220;exact&#8221; measurements of red, green and
+blue colors at different pixels. The missing color information at each pixel
+needs to be interpolated from neighbors (4 or 2). <em>Just do &#8220;something
+reasonable&#8221; for pixels on the very boundary of the image.</em> <a href="https://www.ics.uci.edu/~majumder/PHOTO/DemosaicingAndWhiteBalancing.pdf">image source</a> </figcaption>
+</figure>
+
+<h2 id="colorrepresentation">Color representation</h2>
+
+<p>RGB is just one way to represent a color. Another useful representation is store
+the <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">hue, saturation, and value</a> of a
+color. This &#8220;hsv&#8221; representation also has 3-channels: typically, the
+<a href="https://en.wikipedia.org/wiki/Hue">hue</a> or <code>h</code> channel is stored in degrees
+(i.e., on a periodic scale) in the range <span class="math">\([0°,360°]\)</span> and the
+<a href="https://en.wikipedia.org/wiki/Colorfulness">saturation</a> <code>s</code> and
+<a href="https://en.wikipedia.org/wiki/Lightness">value</a> <code>v</code> are given as absolute
+values in <span class="math">\([0,1]\)</span>.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Converting_to_RGB">Converting between rgb and
+hsv</a> is
+straightforward and makes it easy to implement certain image changes such as
+shifting the hue of an image (e.g., Instagram&#8217;s &#8220;warmth&#8221; filter) and the
+saturation of an image (e.g., Instagram&#8217;s &#8220;saturation&#8221; filter).</p>
+
+<h2 id="tasks">Tasks</h2>
+
+<blockquote>
+<p>Every assignment, including this one, will contain a <strong>Tasks</strong> section. This
+will enumerate all of the tasks a student will need to complete for this
+assignment. These tasks will match the header/implementation pairs in the
+<code>include/</code>/<code>src/</code> directories.</p>
+</blockquote>
+
+<h3 id="groundrules">Groundrules</h3>
+
+<p>Implementations of nearly any task you&#8217;re asked to implemented in this course
+can be found online. Do not copy these and avoid <em>googling for code</em>; instead,
+search the internet for explanations. Many topics have relevant wikipedia
+articles. Use these as references. Always remember to cite any references in
+your comments.</p>
+
+<h4 id="whitelist">White List</h4>
+
+<p>Feel free and encouraged to use standard template library functions in <code>#include
+&lt;algorithm&gt;</code> and <code>#include &lt;cmath&gt;</code> such as <code>std::fmod</code> and <code>std::fabs</code>.</p>
+
+<h3 id="srcrgba_to_rgb.cpp"><code>src/rgba_to_rgb.cpp</code></h3>
+
+<p>Extract the 3-channel rgb data from a 4-channel rgba image.</p>
+
+<h3 id="srcwrite_ppm.cpp"><code>src/write_ppm.cpp</code></h3>
+
+<p>Write an rgb or grayscale image to a .ppm file.</p>
+
+<p>At this point, you should start seeing output files:</p>
+
+<ul>
+<li><code>bayer.ppm</code></li>
+<li><code>composite.ppm</code></li>
+<li><code>demosaicked.ppm</code></li>
+<li><code>desaturated.ppm</code></li>
+<li><code>gray.ppm</code></li>
+<li><code>reflected.ppm</code></li>
+<li><code>rgb.ppm</code></li>
+<li><code>rotated.ppm</code></li>
+<li><code>shifted.ppm</code></li>
+</ul>
+
+<figure>
+<img src="images/rgb.png" alt="If youve implemented src/rgba_to_rgb.cpp correctly then ./raster
+../data/dog.png should produce this image in
+rgb.ppm." />
+<figcaption>If you&#8217;ve implemented <code>src/rgba_to_rgb.cpp</code> correctly then <code>./raster
+../data/dog.png</code> should produce this image in
+<code>rgb.ppm</code>.</figcaption>
+</figure>
+
+<h3 id="srcreflect.cpp"><code>src/reflect.cpp</code></h3>
+
+<p>Horizontally reflect an image (like a mirror)</p>
+
+<figure>
+<img src="images/reflected.png" alt="If youve implemented src/write_ppm.cpp correctly then ./raster
+../data/dog.png should produce this image in
+reflected.ppm." />
+<figcaption>If you&#8217;ve implemented <code>src/write_ppm.cpp</code> correctly then <code>./raster
+../data/dog.png</code> should produce this image in
+<code>reflected.ppm</code>.</figcaption>
+</figure>
+
+<h3 id="srcrotate.cpp"><code>src/rotate.cpp</code></h3>
+
+<p>Rotate an image 90° counter-clockwise</p>
+
+<figure>
+<img src="images/rotated.png" alt="./raster
+../data/dog.png should produce this image in
+rotated.ppm." />
+<figcaption><code>./raster
+../data/dog.png</code> should produce this image in
+<code>rotated.ppm</code>.</figcaption>
+</figure>
+
+<h3 id="srcrgb_to_gray.cpp"><code>src/rgb_to_gray.cpp</code></h3>
+
+<p>Convert a 3-channel RGB image to a 1-channel grayscale image.</p>
+
+<figure>
+<img src="images/gray.png" alt="./raster
+../data/dog.png should produce this image in
+gray.ppm." />
+<figcaption><code>./raster
+../data/dog.png</code> should produce this image in
+<code>gray.ppm</code>.</figcaption>
+</figure>
+
+<h3 id="srcsimulate_bayer_mosaic.cpp"><code>src/simulate_bayer_mosaic.cpp</code></h3>
+
+<p>Simulate an image acquired from the Bayer mosaic by taking a 3-channel rgb image
+and creating a single channel grayscale image composed of interleaved
+red/green/blue channels. The output image should be the same size as the input but only one
+channel.</p>
+
+<figure>
+<img src="images/bayer.png" alt="./raster
+../data/dog.png should produce this image in
+bayer.ppm. Zoom in to see interleaving." />
+<figcaption><code>./raster
+../data/dog.png</code> should produce this image in
+<code>bayer.ppm</code>. <strong>Zoom in</strong> to see interleaving.</figcaption>
+</figure>
+
+<h3 id="srcdemosaic.cpp"><code>src/demosaic.cpp</code></h3>
+
+<p>Given a mosaiced image (interleaved GBRG colors in a single channel), created a
+3-channel rgb image.</p>
+
+<figure>
+<img src="images/demosaicked.png" alt="./raster ../data/dog.png should produce this image in
+demosaicked.ppm." />
+<figcaption><code>./raster ../data/dog.png</code> should produce this image in
+<code>demosaicked.ppm</code>.</figcaption>
+</figure>
+
+<h3 id="srcrgb_to_hsv.cpp"><code>src/rgb_to_hsv.cpp</code></h3>
+
+<p>Convert a color represented by red, green and blue intensities to its
+representation using hue, saturation and value.</p>
+
+<h3 id="srchsv_to_rgb.cpp"><code>src/hsv_to_rgb.cpp</code></h3>
+
+<p>Convert a color represented by hue, saturation and value to its representation
+using red, green and blue intensities.</p>
+
+<h3 id="srchue_shift.cpp"><code>src/hue_shift.cpp</code></h3>
+
+<p>Shift the hue of a color rgb image. </p>
+
+<p>Hint: Use your <code>rgb_to_hsv</code> and <code>hsv_to_rgb</code> functions.</p>
+
+<figure>
+<img src="images/shifted.png" alt="./raster
+../data/dog.png should produce this image in
+shifted.ppm." />
+<figcaption><code>./raster
+../data/dog.png</code> should produce this image in
+<code>shifted.ppm</code>.</figcaption>
+</figure>
+
+<h3 id="srcdesaturate.cpp"><code>src/desaturate.cpp</code></h3>
+
+<p>Desaturate a given rgb color image by a given factor.</p>
+
+<p>Hint: Use your <code>rgb_to_hsv</code> and <code>hsv_to_rgb</code> functions.</p>
+
+<figure>
+<img src="images/desaturated.png" alt="./raster
+../data/dog.png should produce this image in
+desaturated.ppm." />
+<figcaption><code>./raster
+../data/dog.png</code> should produce this image in
+<code>desaturated.ppm</code>.</figcaption>
+</figure>
+
+<h3 id="srcover.cpp"><code>src/over.cpp</code></h3>
+
+<p>Compute C = A Over B, where A and B are semi-transparent rgba images and
+&#8220;Over&#8221; is the Porter-Duff Over operator.</p>
+
+<figure>
+<img src="images/composite.png" alt="./raster
+../data/{dog,glasses,laser-beams,sparkles}.png should produce this image in
+composite.ppm." />
+<figcaption><code>./raster
+../data/{dog,glasses,laser-beams,sparkles}.png</code> should produce this image in
+<code>composite.ppm</code>.</figcaption>
+</figure>
+
+<h3 id="submission">Submission</h3>
+
+<p>Submit your completed homework on MarkUs. <a href="https://markus.teach.cs.toronto.edu/csc418-2018-09/">Open the MarkUs course
+page</a> and submit all the <code>.cpp</code> files in your <code>src/</code> directory under
+Assignment 1: Raster Images in the <code>raster-images</code> repository.</p>
+
+<h3 id="questions">Questions?</h3>
+
+<p>Direct your questions to the <a href="https://github.com/alecjacobson/computer-graphics-raster-images/issues">Issues page of this
+repository</a>.</p>
+
+<h3 id="answers">Answers?</h3>
+
+<p>Help your fellow students by answering questions or positions helpful tips on
+<a href="https://github.com/alecjacobson/computer-graphics-raster-images/issues">Issues page of this
+repository</a>.</p>
+
+<hr />
+
+<blockquote>
+<h4 id="¹macusers">¹ Mac Users</h4>
+
+<p>You will need to install Xcode if you haven&#8217;t already. </p>
+
+<h4 id="²linuxusers">² Linux Users</h4>
+
+<p>Many linux distributions do not include gcc and the basic development tools
+in their default installation. On Ubuntu, you need to install the following
+packages (more than needed for this assignment but should cover the whole
+course):</p>
+
+<pre><code>sudo apt-get install git
+sudo apt-get install build-essential
+sudo apt-get install cmake
+sudo apt-get install libx11-dev
+sudo apt-get install mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev
+sudo apt-get install libxrandr-dev
+sudo apt-get install libxi-dev
+sudo apt-get install libxmu-dev
+sudo apt-get install libblas-dev
+</code></pre>
+
+<h4 id="³windowsusers">³ Windows Users</h4>
+
+<p>Our assignments only support the Microsoft Visual Studio 2015 compiler in
+64bit mode. It will not work with a 32bit build and it will not work with
+older versions of visual studio.</p>
+
+<h4 id="⁴latex">⁴ LaTeX</h4>
+
+<p>This markdown document, and those for all other assignments, contains
+<span class="math">\(\LaTeX\)</span> math. GitHub just shows the un-evaluated LaTeX code, but other
+markdown browsers may show the typeset math. Alaternatively, open the
+<code>README.html</code> (must be online) to view the equations.</p>
+
+<p>For reference, you can generate <code>README.html</code> from the <code>README.md</code> using
+<a href="http://fletcherpenney.net/multimarkdown/">multimarkdown</a>:</p>
+
+<pre><code>cat markdown/header.md README.md | multimarkdown --process-html -o README.html
+</code></pre>
+</blockquote>
+
+</body>
+</html>

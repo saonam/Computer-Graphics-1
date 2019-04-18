@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link type="text/css" rel="stylesheet" href="css/github-markdown.css"/>
+<link rel="stylesheet" href="css/github-markdown.css">
+<style>
+.markdown-body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+}
+</head>
+<body>
+
+<pre><code>@media (max-width: 767px) {
+    .markdown-body {
+        padding: 15px;
+    }
+}
+</code></pre>
+
+<p></style>
+<article class="markdown-body"></p>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "all"} } });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<div style="display:none">
+<span class="math">\(\newcommand{\A}{\mat{A}}\)</span>
+<span class="math">\(\newcommand{\B}{\mat{B}}\)</span>
+<span class="math">\(\newcommand{\C}{\mat{C}}\)</span>
+<span class="math">\(\newcommand{\D}{\mat{D}}\)</span>
+<span class="math">\(\newcommand{\E}{\mat{E}}\)</span>
+<span class="math">\(\newcommand{\F}{\mat{F}}\)</span>
+<span class="math">\(\newcommand{\G}{\mat{G}}\)</span>
+<span class="math">\(\newcommand{\H}{\mat{H}}\)</span>
+<span class="math">\(\newcommand{\I}{\mat{I}}\)</span>
+<span class="math">\(\newcommand{\J}{\mat{J}}\)</span>
+<span class="math">\(\newcommand{\K}{\mat{K}}\)</span>
+<span class="math">\(\newcommand{\L}{\mat{L}}\)</span>
+<span class="math">\(\newcommand{\M}{\mat{M}}\)</span>
+<span class="math">\(\newcommand{\N}{\mat{N}}\)</span>
+<span class="math">\(\newcommand{\One}{\mathbf{1}}\)</span>
+<span class="math">\(\newcommand{\P}{\mat{P}}\)</span>
+<span class="math">\(\newcommand{\Q}{\mat{Q}}\)</span>
+<span class="math">\(\newcommand{\Rot}{\mat{R}}\)</span>
+<span class="math">\(\newcommand{\R}{\mathbb{R}}\)</span>
+<span class="math">\(\newcommand{\S}{\mathcal{S}}\)</span>
+<span class="math">\(\newcommand{\T}{\mat{T}}\)</span>
+<span class="math">\(\newcommand{\U}{\mat{U}}\)</span>
+<span class="math">\(\newcommand{\V}{\mat{V}}\)</span>
+<span class="math">\(\newcommand{\W}{\mat{W}}\)</span>
+<span class="math">\(\newcommand{\X}{\mat{X}}\)</span>
+<span class="math">\(\newcommand{\Y}{\mat{Y}}\)</span>
+<span class="math">\(\newcommand{\argmax}{\mathop{\text{argmax}}}\)</span>
+<span class="math">\(\newcommand{\argmin}{\mathop{\text{argmin}}}\)</span>
+<span class="math">\(\newcommand{\a}{\vec{a}}\)</span>
+<span class="math">\(\newcommand{\b}{\vec{b}}\)</span>
+<span class="math">\(\newcommand{\c}{\vec{c}}\)</span>
+<span class="math">\(\newcommand{\d}{\vec{d}}\)</span>
+<span class="math">\(\newcommand{\e}{\vec{e}}\)</span>
+<span class="math">\(\newcommand{\f}{\vec{f}}\)</span>
+<span class="math">\(\newcommand{\g}{\vec{g}}\)</span>
+<span class="math">\(\newcommand{\mat}[1]{\mathbf{#1}}\)</span>
+<span class="math">\(\newcommand{\min}{\mathop{\text{min}}}\)</span>
+<span class="math">\(\newcommand{\m}{\vec{m}}\)</span>
+<span class="math">\(\newcommand{\n}{\vec{n}}\)</span>
+<span class="math">\(\newcommand{\p}{\vec{p}}\)</span>
+<span class="math">\(\newcommand{\q}{\vec{q}}\)</span>
+<span class="math">\(\newcommand{\r}{\vec{r}}\)</span>
+<span class="math">\(\newcommand{\transpose}{{\mathsf T}}\)</span>
+<span class="math">\(\newcommand{\tr}[1]{\mathop{\text{tr}}{\left(#1\right)}}\)</span>
+<span class="math">\(\newcommand{\s}{\vec{s}}\)</span>
+<span class="math">\(\newcommand{\t}{\vec{t}}\)</span>
+<span class="math">\(\newcommand{\u}{\vec{u}}\)</span>
+<span class="math">\(\newcommand{\vec}[1]{\mathbf{#1}}\)</span>
+<span class="math">\(\newcommand{\x}{\vec{x}}\)</span>
+<span class="math">\(\newcommand{\y}{\vec{y}}\)</span>
+<span class="math">\(\newcommand{\z}{\vec{z}}\)</span>
+<span class="math">\(\newcommand{\0}{\vec{0}}\)</span>
+<span class="math">\(\renewcommand{\v}{\vec{v}}\)</span>
+<!-- https://github.com/mathjax/MathJax/issues/1766 -->
+<span class="math">\(\renewcommand{\hat}[1]{\widehat{#1}}\)</span>
+</div>
+
+<h1 id="computergraphics–meshes">Computer Graphics – Meshes</h1>
+
+<blockquote>
+<p><strong>To get started:</strong> Clone this repository by issuing</p>
+
+<pre><code>git clone --recursive http://github.com/[username]/computer-graphics-meshes.git
+</code></pre>
+</blockquote>
+
+<h2 id="background">Background</h2>
+
+<h3 id="readsection12.1offundamentalsofcomputergraphics4thedition.">Read Section 12.1 of <em>Fundamentals of Computer Graphics (4th Edition)</em>.</h3>
+
+<h3 id="skimreadchapter11offundamentalsofcomputergraphics4thedition.">Skim read Chapter 11 of <em>Fundamentals of Computer Graphics (4th Edition)</em>.</h3>
+
+<p>There are many ways to store a triangle (or polygonal) mesh on the computer. The
+data-structures have very different complexities in terms of code, memory, and
+access performance. At the heart of these structures, is the problem of storing
+the two types of information defining a mesh: the <em>geometry</em> (where are points
+on the surface located in space) and the <em>connectivity</em> (which points are
+connected to each other). The connectivity is also sometimes referred to as the
+<a href="https://en.wikipedia.org/wiki/Topology">topology</a> of the mesh.</p>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Graphics_pipeline">graphics pipeline</a> works
+on a per-triangle and per-vertex basis. So the simplest way to store geometry is
+a 3D position <span class="math">\(\v_i ∈ \R³\)</span> for each <span class="math">\(i\)</span>-th vertex of the mesh. And to store
+triangle connectivity as an ordered triplet of indices referencing vertices:
+<span class="math">\({i,j,k}\)</span> defines a triangle with corners at vertices <span class="math">\(\v_i\)</span>, <span class="math">\(\v_j\)</span> and <span class="math">\(\v_k\)</span>.
+Thus, the geometry is stored as a list of <span class="math">\(n\)</span> 3D vectors: efficiently, we can
+put these vectors in the rows of a real-valued matrix <span class="math">\(\V ∈ \R^{n×3}\)</span>. Likewise,
+the connectivity is stored as a list of <span class="math">\(m\)</span> triplets: efficiently, we can put
+these triplets in the rows of an integer-valued matrix <span class="math">\(\F ∈ [0,n-1]^{m×3}\)</span>.</p>
+
+<blockquote>
+<p><strong>Question:</strong> What if we want to store a (pure-)quad mesh?</p>
+</blockquote>
+
+<h3 id="texturemapping">Texture Mapping</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Texture_mapping">Texture mapping</a> is a process
+for mapping image information (e.g., colors) onto a surface (e.g., triangle
+mesh). The standard way to define a texture mapping is to augment the 3D
+geometric information of a mesh with additional 2D <em>parametrization</em>
+information: where do we find each point on the texture image plane? Typically,
+parameterization coordinates are bound to the unit square. </p>
+
+<p>Mapping a 3D flat polygon to 2D is rather straightforward. The problem of
+finding a good mapping from a 3D surface to 2D becomes much harder if our
+surface is not flat (e.g., like a
+<a href="https://en.wikipedia.org/wiki/Hemisphere">hemisphere</a>), if the surface does not
+have exact one boundary (e.g., like a sphere) or if the surface has &#8220;holes&#8221;
+(e.g., like a <a href="https://en.wikipedia.org/wiki/Torus">torus/doughnut</a>).</p>
+
+<p>Curved surfaces must get <em>distorted</em> when flattened onto the plane. This is why
+<a href="https://www.youtube.com/watch?v=vVX-PrBRtTY">Greenland looks bigger than
+Africa</a> on a common map of the
+Earth.</p>
+
+<p>The lack or presence of too many boundaries or the presence of &#8220;doughnut holes&#8221;
+in surfaces implies that we need to &#8220;cut&#8221; the surface to lay out it on the
+plane so all parts of the surface are &#8220;face up&#8221;. <em>Think about trying to flatten
+a deflated basketball on the ground.</em> </p>
+
+<h3 id="normals">Normals</h3>
+
+<p>For a smooth surface, knowing the surface geometry (i.e., position in space)
+near a point fully determines the <a href="https://en.wikipedia.org/wiki/Normal_(geometry)">normal
+vector</a> at that point.</p>
+
+<p>For a discrete mesh, the normal is only well-defined in the middle of planar
+faces (e.g., inside the triangles of a triangle mesh, but not along the edges or
+at vertices). Furthermore, if we use these normals for rendering, the surface
+will have a faceted appearance. This appearance is mathematically correct, but
+not necessarily desired if we wish to display a smooth looking surface.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Bui_Tuong_Phong">Phong</a> realized that <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linearly
+interpolating</a> normals
+stored at the corners of each triangle leads to a <a href="https://en.wikipedia.org/wiki/Phong_shading#Phong_interpolation">smooth
+appearance</a>.</p>
+
+<p>This raises the question: what normals should we put at vertices or corners of
+our mesh? </p>
+
+<p>For a faceted surface (e.g., a cube), all corners of a planar face <span class="math">\(f\)</span> should
+share the face&#8217;s normal <span class="math">\(\n_f ∈ \R³\)</span> .</p>
+
+<p>For a smooth surface (e.g., a sphere), corners of triangles located at the same
+vertex should share the same normal vector. This way the rendering is continuous
+across the vertex. A common way to define per-vertex normals is to take a
+weighted average of normals from incident faces. Different weighting schemes are
+possible: uniform average (easy, but sensitive to irregular triangulations),
+angle-weighted (geometrically well motivated, but not robust near zero-area
+triangles), area-weighted (geometrically reasonable, well behaved). In this
+assignment, we&#8217;ll compute area-weighted per-vertex normals:</p>
+
+<p><span class="math">\[\n_v = \frac{∑\limits_{f∈N(v)} a_f \n_f}{\left\|∑\limits_{f∈N(v)} a_f \n_f\right\|},\]</span>
+where <span class="math">\(N(v)\)</span> is the set of faces neighboring the <span class="math">\(v\)</span>-th vertex.</p>
+
+<figure>
+<img src="images/per-vertex-normal.png" alt="Unique triangle normals (orange) are well-defined. We can define a notion of a
+normal for each vertex (purple) by taking a (weighted) average of normals from
+incident triangles." id="per-vertex-normal" style="height:300px;" />
+<figcaption>Unique triangle normals (orange) are well-defined. We can define a notion of a
+normal for each vertex (purple) by taking a (weighted) average of normals from
+incident triangles.</figcaption>
+</figure>
+
+<p>For surfaces with a mixture of smooth-looking parts and creases, it is useful to
+define normals independently for each triangle corner (as opposed to each mesh
+vertex). For each corner, we&#8217;ll again compute an area-weighted average of normals
+triangles incident on the shared vertex at this corner, but we&#8217;ll ignore
+triangle&#8217;s whose normal is too different from the corner&#8217;s face&#8217;s normal:</p>
+
+<p>$$\n_{f,c} =
+\frac{∑\limits_{g∈N(v)\,|\,\n_g⋅\n_f&lt;ε } a_g \n_g}{\left|\left|∑\limits_{g∈N(v)\,|\,\n_g⋅\n_f&lt;ε } a_g \n_g\right|\right|},
+$$
+where <span class="math">\(ε\)</span> is the maximum dot product between two face normals before we declare
+there is a crease between them.</p>
+
+<figure>
+<img src="images/fandisk-normals.png" alt="./normals should open a viewing window. Toggling 1,2,3 should switch
+between normal types. Notice that per-face has sharp corners, but a faceted
+appearance in the curved regions; the per-vertex has nice smooth regions but
+ugly corners where averaging acts up; and per-corner is the best of both
+worlds." />
+<figcaption><code>./normals</code> should open a viewing window. Toggling <code>1</code>,<code>2</code>,<code>3</code> should switch
+between normal types. Notice that per-face has sharp corners, but a faceted
+appearance in the curved regions; the per-vertex has nice smooth regions but
+ugly corners where averaging acts up; and per-corner is the best of both
+worlds.</figcaption>
+</figure>
+
+<h3 id=".objfileformat">.obj File Format</h3>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">.obj file format</a> is a
+<em>face</em>-based representation of a mesh. The connectivity/topological data is
+stored implicitly by a list of a faces whose corners can <em>share</em> geometric
+information.</p>
+
+<p>There are three main types of geometric information stored at vertices:</p>
+
+<ul>
+<li>3D position information (let&#8217;s call it <code>V</code>),</li>
+<li>3D normal vector information (let&#8217;s call it <code>NV</code>), and</li>
+<li>2D parameterization information (let&#8217;s call it <code>UV</code>).</li>
+</ul>
+
+<p>Faces know where to find the position, normal and parameterization information
+for each corner by following a pointer/index. For a given corner of a given
+face, the index for position, normal or parameterization information may be
+different.</p>
+
+<blockquote>
+<p><strong>Warning:</strong> In C++ indices <a href="">&#8220;start&#8221;</a> at <code>0</code>, but in a .obj file the first
+element in a list has index <code>1</code>.</p>
+</blockquote>
+
+<figure>
+<img src="images/rubiks-cube.gif" alt="Running ./obj will first pop up a viewer with your generated cube textured
+with a Rubiks
+cube" />
+<figcaption>Running <code>./obj</code> will first pop up a viewer with your generated cube textured
+with a <a href="https://en.wikipedia.org/wiki/Rubik%27s_Cube">Rubik&#8217;s
+cube</a></figcaption>
+</figure>
+
+<figure>
+<img src="images/earth.gif" alt="After closing that window, another viewer will pop up with your generated sphere textured
+with the earth." />
+<figcaption>After closing that window, another viewer will pop up with your generated sphere textured
+with the earth.</figcaption>
+</figure>
+
+<h5 id="cubeexample">Cube example</h5>
+
+<p>In this way, the quadrilateral faces of a cube mesh may use 8 unique
+3D vertex positions, giving the appearance of a connected surface when visualized
+in 3D. The same set of faces may use 14 unique 2D parameterization positions,
+giving the appearance of a cross with a boundary when visualized in 2D. Finally,
+that same set of faces may use only 6 unique 3D normal vectors.</p>
+
+<figure>
+<img src="images/cube.png" alt="" />
+</figure>
+
+<h3 id="eigenmatrices">Eigen Matrices</h3>
+
+<p>Every row of <code>Eigen::MatrixXd</code> can store a mesh vertex position using _doubles.</p>
+
+<p>Every row of <code>Eigen::MatrixXi</code> can store a list of indices into rows of position
+matrix using integers as <em>indices</em>.</p>
+
+<p>Use <code>.resize(num_rows,num_cols)</code> to resize a matrix to be <code>num_rows</code> by
+<code>num_cols</code>. Use <code>X = Eigen::MatrixXd::Zero(num_rows,num_cols)</code> to resize and initialize a
+matrix with zeros.</p>
+
+<h3 id="subdivisionsurfaces">Subdivision Surfaces</h3>
+
+<p>A <a href="https://en.wikipedia.org/wiki/Subdivision_surface">subdivision surface</a> is a
+natural generalization of a <a href="https://en.wikipedia.org/wiki/Spline_(mathematics)">spline
+curve</a>. A smooth spline can
+be defined as the <a href="https://en.wikipedia.org/wiki/Limit_(mathematics)">limit</a> of
+a <a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)">recursive
+process</a> applied to
+a polygon: each edge of the polygon is split with a new vertex and the vertices
+are smoothed toward eachother. If you&#8217;ve drawn smooth curves using Adobe
+Illustrator, PowerPoint or Inkscape, then you&#8217;ve used splines.</p>
+
+<p>At a high-level, subdivision surfaces work the same way. We start with a
+polyhedral mesh and subdivide each face. This adds new vertices on the faces
+and/or edges of the mesh. Then we smooth vertices toward each other.</p>
+
+<p>The first and still (most) popular subdivision scheme was invented by
+<a href="https://en.wikipedia.org/wiki/Edwin_Catmull">Catmull</a> (who went on to co-found
+<a href="https://en.wikipedia.org/wiki/Pixar">Pixar</a>) and
+<a href="https://en.wikipedia.org/wiki/James_H._Clark">Clark</a> (founder of
+<a href="https://en.wikipedia.org/wiki/Silicon_Graphics">Silicon Graphics</a> and
+<a href="https://en.wikipedia.org/wiki/Netscape">Netscape</a>). <a href="https://en.wikipedia.org/wiki/Catmull–Clark_subdivision_surface">Catmull-Clark
+subdivision</a> is
+defined for inputs meshes with arbitrary polygonal faces (triangles, quads,
+pentagons, etc.) but always produces a pure-quad mesh as output (i.e., all faces
+have 4 sides).</p>
+
+<p>To keep things simple, in this assignment we&#8217;ll assume the input is also a
+pure-quad mesh.</p>
+
+<figure>
+<img src="images/bob-subdivision.gif" alt="Running ./quad_subdivision and repeated pressing space will show this
+Bob converging
+toward a smooth surface." />
+<figcaption>Running <code>./quad_subdivision</code> and repeated pressing <em>space</em> will show this
+<a href="http://www.cs.cmu.edu/~kmcrane/Projects/ModelRepository/#bob">Bob</a> converging
+toward a smooth surface.</figcaption>
+</figure>
+
+<h2 id="meshviewers">Mesh Viewers</h2>
+
+<p><a href="http://www.meshlab.net">Mesh Lab</a> is a free mesh-viewer used widely in computer
+graphics and computer vision research. <strong><em>Warning</em>:</strong> Mesh Lab does not appear
+to respect user-provided normals in .obj files.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Autodesk_Maya">Autodesk Maya</a> is a commericial 3D
+modeling and animation software. They often have <a href="https://www.autodesk.com/education/free-software/maya">free student
+versions</a>.</p>
+
+<h2 id="tasks">Tasks</h2>
+
+<h3 id="whitelist">White list</h3>
+
+<p>You&#8217;re encouraged to use <code>#include &lt;Eigen/Geometry&gt;</code> to compute the <a href="https://en.wikipedia.org/wiki/Cross_product">cross
+product</a> of two 3D vectors
+<code>.cross</code>.</p>
+
+<h3 id="blacklist">Black list</h3>
+
+<p>This assignment uses <a href="http://libigl.github.io">libigl</a> for mesh viewing. libigl
+has many mesh processing functions implemented in C++, including some of the
+functions assigned here. Do not copy or look at the following implementations:</p>
+
+<p><code>igl::per_vertex_normals</code><br/>
+<code>igl::per_face_normals</code><br/>
+<code>igl::per_corner_normals</code><br/>
+<code>igl::double_area</code><br/>
+<code>igl::vertex_triangle_adjacency</code><br/>
+<code>igl::writeOBJ</code> </p>
+
+<h3 id="srcwrite_obj.cpp"><code>src/write_obj.cpp</code></h3>
+
+<p>Write a pure-triangle or pure-quad mesh with 3D vertex positions <code>V</code> and faces
+<code>F</code>, 2D parametrization positions <code>UV</code> and faces <code>UF</code>, 3D normal vectors <code>NV</code>
+and faces <code>NF</code> to a <code>.obj</code> file.</p>
+
+<blockquote>
+<p><strong>Note:</strong> These <em>two</em> function overloads represent only a small subset of
+meshes and mesh-data that can be written to a <code>.obj</code> file. </p>
+</blockquote>
+
+<h3 id="srccube.cpp"><code>src/cube.cpp</code></h3>
+
+<p>Construct the quad mesh of a cube including parameterization and per-face
+normals.</p>
+
+<blockquote>
+<p><strong>Hint:</strong> Draw out on paper and <em>label</em> with indices the 3D cube, the 2D
+parameterized cube, and the normals.</p>
+</blockquote>
+
+<h3 id="srcsphere.cpp"><code>src/sphere.cpp</code></h3>
+
+<p>Construct a quad mesh of a sphere with num_faces_u × num_faces_v faces.</p>
+
+<h3 id="srccatmull_clark.cpp"><code>src/catmull_clark.cpp</code></h3>
+
+<p>Conduct <code>num_iters</code> iterations of <a href="https://en.wikipedia.org/wiki/Catmull–Clark_subdivision_surface">Catmull-Clark
+subdivision</a> on
+a <strong>pure quad</strong> mesh (<code>V</code>,<code>F</code>).</p>
+
+<h3 id="srctriangle_area_normal.cpp"><code>src/triangle_area_normal.cpp</code></h3>
+
+<p>Compute the normal vector of a 3D triangle given its corner locations. The
+output vector should have length equal to the area of the triangle.</p>
+
+<h3 id="srcper_face_normals.cpp"><code>src/per_face_normals.cpp</code></h3>
+
+<p>Compute per-face normals for a triangle mesh.</p>
+
+<h3 id="srcper_vertex_normals.cpp"><code>src/per_vertex_normals.cpp</code></h3>
+
+<p>Compute per-vertex normals for a triangle mesh.</p>
+
+<h3 id="srcvertex_triangle_adjacency.cpp"><code>src/vertex_triangle_adjacency.cpp</code></h3>
+
+<p>Compute a vertex-triangle adjacency list. For each vertex store a list of all
+incident faces.</p>
+
+<h3 id="srcper_corner_normals.cpp"><code>src/per_corner_normals.cpp</code></h3>
+
+<p>Compute per corner normals for a triangle mesh by computing the area-weighted
+average of normals at incident faces whose normals deviate less than the
+provided threshold.</p>
+
+</body>
+</html>

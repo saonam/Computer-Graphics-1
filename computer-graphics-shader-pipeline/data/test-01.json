@@ -1,0 +1,6 @@
+{
+  "vertex": [ "../src/version410.glsl","../src/pass-through.vs"],
+  "tess_control": [ "../src/version410.glsl","../src/pass-through.tcs"],
+  "tess_evaluation": [ "../src/version410.glsl","../src/interpolate.glsl","../src/pass-through.tes"],
+  "fragment": [ "../src/version410.glsl","../src/pass-through.fs"]
+}

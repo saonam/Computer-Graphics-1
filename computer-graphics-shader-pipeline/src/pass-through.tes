@@ -1,0 +1,10 @@
+layout(triangles, equal_spacing, ccw) in;
+in vec4 pos_es_in[];
+out vec4 pos_fs_in;
+// expects: interpolate
+void main()
+{
+  pos_fs_in = interpolate(gl_TessCoord,pos_es_in[0], pos_es_in[1], pos_es_in[2]);
+  gl_Position = pos_fs_in;
+}
+

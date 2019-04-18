@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link type="text/css" rel="stylesheet" href="css/github-markdown.css"/>
+<link rel="stylesheet" href="css/github-markdown.css">
+<style>
+.markdown-body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+}
+</head>
+<body>
+
+<pre><code>@media (max-width: 767px) {
+    .markdown-body {
+        padding: 15px;
+    }
+}
+</code></pre>
+
+<p></style>
+<article class="markdown-body"></p>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "all"} } });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<div style="display:none">
+<span class="math">\(\newcommand{\A}{\mat{A}}\)</span>
+<span class="math">\(\newcommand{\B}{\mat{B}}\)</span>
+<span class="math">\(\newcommand{\C}{\mat{C}}\)</span>
+<span class="math">\(\newcommand{\D}{\mat{D}}\)</span>
+<span class="math">\(\newcommand{\E}{\mat{E}}\)</span>
+<span class="math">\(\newcommand{\F}{\mat{F}}\)</span>
+<span class="math">\(\newcommand{\G}{\mat{G}}\)</span>
+<span class="math">\(\newcommand{\H}{\mat{H}}\)</span>
+<span class="math">\(\newcommand{\I}{\mat{I}}\)</span>
+<span class="math">\(\newcommand{\J}{\mat{J}}\)</span>
+<span class="math">\(\newcommand{\K}{\mat{K}}\)</span>
+<span class="math">\(\newcommand{\L}{\mat{L}}\)</span>
+<span class="math">\(\newcommand{\M}{\mat{M}}\)</span>
+<span class="math">\(\newcommand{\N}{\mat{N}}\)</span>
+<span class="math">\(\newcommand{\One}{\mathbf{1}}\)</span>
+<span class="math">\(\newcommand{\P}{\mat{P}}\)</span>
+<span class="math">\(\newcommand{\Q}{\mat{Q}}\)</span>
+<span class="math">\(\newcommand{\Rot}{\mat{R}}\)</span>
+<span class="math">\(\newcommand{\R}{\mathbb{R}}\)</span>
+<span class="math">\(\newcommand{\S}{\mathcal{S}}\)</span>
+<span class="math">\(\newcommand{\T}{\mat{T}}\)</span>
+<span class="math">\(\newcommand{\U}{\mat{U}}\)</span>
+<span class="math">\(\newcommand{\V}{\mat{V}}\)</span>
+<span class="math">\(\newcommand{\W}{\mat{W}}\)</span>
+<span class="math">\(\newcommand{\X}{\mat{X}}\)</span>
+<span class="math">\(\newcommand{\Y}{\mat{Y}}\)</span>
+<span class="math">\(\newcommand{\argmax}{\mathop{\text{argmax}}}\)</span>
+<span class="math">\(\newcommand{\argmin}{\mathop{\text{argmin}}}\)</span>
+<span class="math">\(\newcommand{\a}{\vec{a}}\)</span>
+<span class="math">\(\newcommand{\b}{\vec{b}}\)</span>
+<span class="math">\(\newcommand{\c}{\vec{c}}\)</span>
+<span class="math">\(\newcommand{\d}{\vec{d}}\)</span>
+<span class="math">\(\newcommand{\e}{\vec{e}}\)</span>
+<span class="math">\(\newcommand{\f}{\vec{f}}\)</span>
+<span class="math">\(\newcommand{\g}{\vec{g}}\)</span>
+<span class="math">\(\newcommand{\mat}[1]{\mathbf{#1}}\)</span>
+<span class="math">\(\newcommand{\min}{\mathop{\text{min}}}\)</span>
+<span class="math">\(\newcommand{\m}{\vec{m}}\)</span>
+<span class="math">\(\newcommand{\n}{\vec{n}}\)</span>
+<span class="math">\(\newcommand{\p}{\vec{p}}\)</span>
+<span class="math">\(\newcommand{\q}{\vec{q}}\)</span>
+<span class="math">\(\newcommand{\r}{\vec{r}}\)</span>
+<span class="math">\(\newcommand{\transpose}{{\mathsf T}}\)</span>
+<span class="math">\(\newcommand{\tr}[1]{\mathop{\text{tr}}{\left(#1\right)}}\)</span>
+<span class="math">\(\newcommand{\s}{\vec{s}}\)</span>
+<span class="math">\(\newcommand{\t}{\vec{t}}\)</span>
+<span class="math">\(\newcommand{\u}{\vec{u}}\)</span>
+<span class="math">\(\newcommand{\vec}[1]{\mathbf{#1}}\)</span>
+<span class="math">\(\newcommand{\x}{\vec{x}}\)</span>
+<span class="math">\(\newcommand{\y}{\vec{y}}\)</span>
+<span class="math">\(\newcommand{\z}{\vec{z}}\)</span>
+<span class="math">\(\newcommand{\0}{\vec{0}}\)</span>
+<span class="math">\(\renewcommand{\v}{\vec{v}}\)</span>
+<!-- https://github.com/mathjax/MathJax/issues/1766 -->
+<span class="math">\(\renewcommand{\hat}[1]{\widehat{#1}}\)</span>
+</div>
+
+<h1 id="computergraphics–raytracing">Computer Graphics – Ray Tracing</h1>
+
+<blockquote>
+<p><strong>To get started:</strong> Clone this repository using</p>
+
+<pre><code>git clone http://github.com/alecjacobson/computer-graphics-ray-tracing.git
+</code></pre>
+</blockquote>
+
+<h2 id="background">Background</h2>
+
+<h3 id="readsections4.5-4.9offundamentalsofcomputergraphics4thedition.">Read Sections 4.5&#8211;4.9 of <em>Fundamentals of Computer Graphics (4th Edition)</em>.</h3>
+
+<p>Many of the classes and functions of this assignment are borrowed or adapted
+from the previous <a href="https://github.com/alecjacobson/computer-graphics-ray-casting">ray casting assignment</a>.</p>
+
+<p>Unlike that assignment, this <a href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">ray
+tracer</a> will produce
+<em>approximately</em> accurate renderings of scenes illuminated with light.
+Ultimately, the shading and lighting models here are <em>useful</em> hacks. The basic
+<a href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)#Recursive_ray_tracing_algorithm">recursive</a>
+structure of the program is core to many methods for rendering with <a href="https://en.wikipedia.org/wiki/Global_illumination">global
+illumination</a> effects (e.g.,
+shadows, reflections, etc.).</p>
+
+<figure>
+<img src="images/sphere-and-plane.png" alt="Running ./raytracing should produce this image." />
+<figcaption>Running <code>./raytracing</code> should produce this image.</figcaption>
+</figure>
+
+<h2 id="floatingpointnumbers">Floating point numbers</h2>
+
+<p>For this assignment we will use the <code>Eigen::Vector3d</code> to represent points and
+vectors, but <em>also</em> RGB colors. For all computation (before finally writing the
+.ppm file) we will use double precision floating point numbers and <code>0</code> will
+represent no light and <code>1</code> will represent the brightest color we can display.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">Floating point
+numbers</a> <span class="math">\(≠\)</span> <a href="https://en.wikipedia.org/wiki/Real_number">real
+numbers</a>, they don&#8217;t even cover all
+of the <a href="https://en.wikipedia.org/wiki/Rational_number">rational numbers</a>. This
+creates a number of challenges in numerical method and rendering is not immune
+to them. We see this in the need for a <a href="https://en.wikipedia.org/wiki/Fudge_factor">fudge
+factor</a> to discard ray-intersections
+when computing shadows or reflections that are too close to the originating
+surface (i.e., false intersections due to numerical error).</p>
+
+<blockquote>
+<p><strong>Question:</strong> If we build a ray and a plane with floating point coefficients,
+will the intersection point have floating point coefficients? What if we
+consider rational coefficients? What if we consider a sphere instead of a
+plane?</p>
+
+<p><strong>Hint:</strong> Can we <em>exactly</em> represent <span class="math">\(1/3\)</span> as a <code>double</code>? Can we represent
+<span class="math">\(\sqrt{2}\)</span> as a rational?</p>
+</blockquote>
+
+<h3 id="dynamicrangeburning">Dynamic Range &amp; Burning</h3>
+
+<p>Light obeys the <a href="https://en.wikipedia.org/wiki/Superposition_principle">superposition
+principle</a>. Simply put,
+the light reflected of some part of an objects is the <em>sum</em> of contributions
+from light coming in all directions (e.g., from all light sources). If there are
+many bright lights in the scene and the object has a bright color, it is easy
+for this sum to add up to more than one. At first this seems counter-intuitive:
+How can we exceed 100% light? But this premise is false, the <span class="math">\(1.0\)</span> does not mean
+the physically brightest possible light in the world, but rather the brightest
+light our screen can display (or the brightest color we can store in our chosen
+image format). <a href="https://en.wikipedia.org/wiki/High-dynamic-range_imaging">High dynamic range (HDR)
+images</a> store a larger
+range beyond this usual [0,1]. For this assignment, we will simply <em>clamp</em> the
+total light values at a pixel to 1.</p>
+
+<p>This issue is compounded by the problem that the <a href="https://en.wikipedia.org/wiki/Blinn–Phong_shading_model">Blinn-Phong
+shading</a> does not
+correctly <a href="https://en.wikipedia.org/wiki/Energy_conservation">conserve energy</a>
+as happens with light in the physical world.</p>
+
+<figure>
+<img src="images/bunny.png" alt="Running ./raytracing ../data/bunny.json should produce this image.
+Notice the burned out white
+regions where the collected light has been clamped to [1,1,1]
+(white)." />
+<figcaption>Running <code>./raytracing ../data/bunny.json</code> should produce this image.
+Notice the <a href="https://en.wikipedia.org/wiki/Burned_(image)">&#8220;burned out&#8221;</a> white
+regions where the collected light has been clamped to [1,1,1]
+(white).</figcaption>
+</figure>
+
+<blockquote>
+<p><strong>Question:</strong> Can we ever get a pixel value <em>less than zero</em>?</p>
+
+<p><strong>Hint:</strong> Can a light be more than off?</p>
+
+<p><strong>Side note:</strong> This doesn&#8217;t stop crafty visual effects artists from using
+&#8220;negative lights&#8221; to manipulate scenes for aesthetic purposes.</p>
+</blockquote>
+
+<h2 id="whitelist">Whitelist</h2>
+
+<p>There are many ways to &#8220;multiply&#8221; two vectors. One way is to compute the
+<a href="https://en.wikipedia.org/wiki/Hadamard_product_(matrices)">component-wise</a>
+multiplication: <span class="math">\(\mathbf{c} = \mathbf{a} \circ \mathbf{b}\)</span> or in index notation:
+<span class="math">\(c_i = a_i b_i\)</span>. That is, multiply each corresponding component and store the
+result in the corresponding component of the output vector. Using the Eigen
+library this is accomplished by telling Eigen to treat each of the vectors as
+&#8220;array&#8221; (where <a href="">matrix multiplication</a>, <a href="">dot product</a>, <a href="">cross product</a>
+would not make sense) and then using the usual <code>*</code> multiplication:</p>
+
+<pre><code>Eigen::Vector3d a,b;
+...
+// Component-wise multiplication
+Eigen::Vector3d c = (a.array() * b.array()).matrix();
+</code></pre>
+
+<p>The <code>.matrix()</code> converts the &#8220;array&#8221; view of the vector back to a &#8220;matrix&#8221;
+(i.e., vector) view of the vector.</p>
+
+<p>Eigen also has a built in way to normalize a vector (divide a vector by its
+length): <code>a.normalized()</code>.</p>
+
+<p>C++ standard library includes a value for <span class="math">\(∞\)</span> via <code>#include &lt;limits&gt;</code>. For
+example, for <code>double</code> floating point, use <code>std::numeric_limits&lt;double&gt;::infinity()</code>.</p>
+
+<h2 id="tasks">Tasks</h2>
+
+<h3 id="srcplane.cppbrsrcsphere.cppbrsrctriangle.cppbrsrctrianglesoup.cppbrsrcfirst_hit.cppbrsrcviewing_ray.cppbrsrcwrite_ppm.cpp"><code>src/Plane.cpp</code>,<br> <code>src/Sphere.cpp</code>,<br> <code>src/Triangle.cpp</code>,<br> <code>src/TriangleSoup.cpp</code>,<br> <code>src/first_hit.cpp</code>,<br> <code>src/viewing_ray.cpp</code>,<br> <code>src/write_ppm.cpp</code></h3>
+
+<p>See the previous <a href="https://github.com/alecjacobson/computer-graphics-ray-casting">ray casting
+assignment</a>.</p>
+
+<h3 id="pointlight::directioninsrcpointlight.cpp"><code>PointLight::direction</code> in <code>src/PointLight.cpp</code></h3>
+
+<p>Compute the direction to a point light source and its <em>parametric</em> distance from
+a query point.</p>
+
+<h3 id="directionallight::directioninsrcdirectionallight.cpp"><code>DirectionalLight::direction</code> in <code>src/DirectionalLight.cpp</code></h3>
+
+<p>Compute the direction to a direction light source and its <em>parametric</em> distance from a
+query point (infinity).</p>
+
+<h3 id="srcraycolor.cpp"><code>src/raycolor.cpp</code></h3>
+
+<p>Make use of <code>first_hit.cpp</code> to shoot a ray into the scene, collect hit
+information and use this to return a color value. </p>
+
+<h3 id="srcblinn_phong_shading.cpp"><code>src/blinn_phong_shading.cpp</code></h3>
+
+<p>Compute the lit color of a hit object in the scene using <a href="https://en.wikipedia.org/wiki/Blinn–Phong_shading_model">Blinn-Phong shading
+model</a>. This function
+should also shoot an additional ray to each light source to check for shadows.</p>
+
+<figure>
+<img src="images/sphere-and-plane.gif" alt="It is recommended to add and debug each term in your shading model. The
+ambient term will look like a faint object-ID image. The diffuse term will
+illuminate the scene, and create a dull, Lambertian look to each object. The
+specular term will add shiny highlights. Then, mask the diffuse and specular
+terms by checking for shadows. Finally, add a recursive call to account for
+mirror reflections." />
+<figcaption>It is recommended to add and debug each term in your shading model. The
+ambient term will look like a faint object-ID image. The diffuse term will
+illuminate the scene, and create a dull, Lambertian look to each object. The
+specular term will add shiny highlights. Then, mask the diffuse and specular
+terms by checking for shadows. Finally, add a recursive call to account for
+mirror reflections.</figcaption>
+</figure>
+
+<h3 id="srcreflect.cpp"><code>src/reflect.cpp</code></h3>
+
+<p>Given an &#8220;incoming&#8221; vector and a normal vector, compute the mirror reflected
+&#8220;outgoing&#8221; vector.</p>
+
+<figure>
+<img src="images/sphere-packing.png" alt="./raytracing ../data/sphere-packing.json should produce this
+image of highly reflective, metallic looking
+surfaces." />
+<figcaption><code>./raytracing ../data/sphere-packing.json</code> should produce this
+image of highly reflective, metallic looking
+surfaces.</figcaption>
+</figure>
+
+<h3 id="srccreative.json"><code>src/creative.json</code></h3>
+
+<p>Be creative! Design a scene using any of the available Object types (spheres,
+planes, triangles, triangle soups), Light types (directional, point), Material
+parameters, colors (materials and/or lights), and don&#8217;t forget about the camera
+parameters.</p>
+
+<p>The <a href="https://en.wikipedia.org/wiki/JSON">.json format</a> is rather
+straightforward. But you may find this <a href="https://jsonlint.com">validator</a> useful.</p>
+
+<blockquote>
+<h3 id="hw2solution">HW2 Solution</h3>
+
+<p>If you don&#8217;t trust your solutiosn to the files from HW2:</p>
+
+<pre><code>src/Plane.cpp
+src/Sphere.cpp
+src/Triangle.cpp
+src/TriangleSoup.cpp
+src/first_hit.cpp
+src/viewing_ray.cpp
+src/write_ppm.cpp
+</code></pre>
+
+<p>You can use precompiled binaries (provided for mac and linux for now) using a
+the cmake command:</p>
+
+<pre><code>mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Debug -DHW2LIB_DIR=../lib/debug/linux/ ..
+make
+</code></pre>
+
+<p>This will use the library at <code>../lib/debug/linux/libhw2.a</code> instead of
+compiling the above files in <code>src/</code>.</p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+<p><strong>Pro Tip:</strong> After you&#8217;re confident that your program is working <em>correctly</em>,
+you can dramatic improve the performance simply by enabling <a href="https://en.wikipedia.org/wiki/Optimizing_compiler">compiler
+optimization</a>: </p>
+
+<pre><code>mkdir build-release
+cd build-release
+cmake ../ -DCMAKE_BUILD_TYPE=Release
+make
+</code></pre>
+</blockquote>
+
+</body>
+</html>

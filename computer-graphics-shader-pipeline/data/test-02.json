@@ -1,0 +1,6 @@
+{
+  "vertex": [ "../src/version410.glsl","../src/PI.glsl","../src/identity.glsl","../src/uniform_scale.glsl","../src/translate.glsl","../src/rotate_about_y.glsl","../src/model.glsl","../src/model_view_projection.vs"],
+  "tess_control": [ "../src/version410.glsl","../src/pass-through.tcs"],
+  "tess_evaluation": [ "../src/version410.glsl","../src/interpolate.glsl","../src/pass-through.tes"],
+  "fragment": [ "../src/version410.glsl","../src/blue_and_gray.fs"]
+}

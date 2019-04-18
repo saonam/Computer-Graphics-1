@@ -1,0 +1,46 @@
+// Hint: Crib from your model_view_projection.vs
+// Layout:
+//                                         Indicate that we're dealing with
+//                                         triangles in CCW order and using a
+//                                         sane spacing.
+layout(triangles, equal_spacing, ccw) in;
+// Uniforms
+uniform mat4 view;
+uniform mat4 proj;
+uniform float animation_seconds;
+uniform bool is_moon;
+// Inputs:
+//                    array of 3 3D patch corner positions
+in vec4 pos_es_in[];
+// Outputs:
+//                   projected, view, and model transformed 3D position
+out vec4 pos_fs_in;
+//                        view and model transformed 3D position
+out vec4 view_pos_fs_in;
+//                      view and model transformed 3D normal
+out vec3 normal_fs_in;
+//                      3D position _before_ applying model, view or projection
+//                      transformations (e.g., point on unit sphere)
+out vec3 sphere_fs_in;
+// expects: interpolat, model, 
+void main()
+{
+  /////////////////////////////////////////////////////////////////////////////
+  // Replace with your code 
+	mat4 model = model(is_moon, animation_seconds);
+	sphere_fs_in = normalize(interpolate(gl_TessCoord, pos_es_in[0].xyz, pos_es_in[1].xyz, pos_es_in[2].xyz));
+    normal_fs_in = (transpose(inverse(view))*transpose(inverse(model*uniform_scale(0.3)))*vec4(sphere_fs_in, 1.0)).xyz;
+	if (!is_moon) {
+		view_pos_fs_in = view*model*vec4(sphere_fs_in, 1.0);
+		pos_fs_in = proj*view*model*vec4(sphere_fs_in, 1.0);
+	} else {
+        float t = (M_PI/2.0)*animation_seconds;
+		vec4 affine = vec4(2*sin(t), 0, 2*cos(t), 0);
+		view_pos_fs_in = view*(model*uniform_scale(0.3)*vec4(sphere_fs_in, 1.0)+affine);
+		pos_fs_in = proj*view*(model*uniform_scale(0.3)*vec4(sphere_fs_in, 1.0)+affine);
+	}
+	gl_Position = pos_fs_in;	
+  /////////////////////////////////////////////////////////////////////////////
+}
+
+

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link type="text/css" rel="stylesheet" href="css/github-markdown.css"/>
+<link rel="stylesheet" href="css/github-markdown.css">
+<style>
+.markdown-body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+}
+</head>
+<body>
+
+<pre><code>@media (max-width: 767px) {
+    .markdown-body {
+        padding: 15px;
+    }
+}
+</code></pre>
+
+<p></style>
+<article class="markdown-body"></p>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "all"} } });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<div style="display:none">
+<span class="math">\(\newcommand{\A}{\mat{A}}\)</span>
+<span class="math">\(\newcommand{\B}{\mat{B}}\)</span>
+<span class="math">\(\newcommand{\C}{\mat{C}}\)</span>
+<span class="math">\(\newcommand{\D}{\mat{D}}\)</span>
+<span class="math">\(\newcommand{\E}{\mat{E}}\)</span>
+<span class="math">\(\newcommand{\F}{\mat{F}}\)</span>
+<span class="math">\(\newcommand{\G}{\mat{G}}\)</span>
+<span class="math">\(\newcommand{\H}{\mat{H}}\)</span>
+<span class="math">\(\newcommand{\I}{\mat{I}}\)</span>
+<span class="math">\(\newcommand{\J}{\mat{J}}\)</span>
+<span class="math">\(\newcommand{\K}{\mat{K}}\)</span>
+<span class="math">\(\newcommand{\L}{\mat{L}}\)</span>
+<span class="math">\(\newcommand{\M}{\mat{M}}\)</span>
+<span class="math">\(\newcommand{\N}{\mat{N}}\)</span>
+<span class="math">\(\newcommand{\One}{\mathbf{1}}\)</span>
+<span class="math">\(\newcommand{\P}{\mat{P}}\)</span>
+<span class="math">\(\newcommand{\Q}{\mat{Q}}\)</span>
+<span class="math">\(\newcommand{\Rot}{\mat{R}}\)</span>
+<span class="math">\(\newcommand{\R}{\mathbb{R}}\)</span>
+<span class="math">\(\newcommand{\S}{\mathcal{S}}\)</span>
+<span class="math">\(\newcommand{\T}{\mat{T}}\)</span>
+<span class="math">\(\newcommand{\U}{\mat{U}}\)</span>
+<span class="math">\(\newcommand{\V}{\mat{V}}\)</span>
+<span class="math">\(\newcommand{\W}{\mat{W}}\)</span>
+<span class="math">\(\newcommand{\X}{\mat{X}}\)</span>
+<span class="math">\(\newcommand{\Y}{\mat{Y}}\)</span>
+<span class="math">\(\newcommand{\argmax}{\mathop{\text{argmax}}}\)</span>
+<span class="math">\(\newcommand{\argmin}{\mathop{\text{argmin}}}\)</span>
+<span class="math">\(\newcommand{\a}{\vec{a}}\)</span>
+<span class="math">\(\newcommand{\b}{\vec{b}}\)</span>
+<span class="math">\(\newcommand{\c}{\vec{c}}\)</span>
+<span class="math">\(\newcommand{\d}{\vec{d}}\)</span>
+<span class="math">\(\newcommand{\e}{\vec{e}}\)</span>
+<span class="math">\(\newcommand{\f}{\vec{f}}\)</span>
+<span class="math">\(\newcommand{\g}{\vec{g}}\)</span>
+<span class="math">\(\newcommand{\mat}[1]{\mathbf{#1}}\)</span>
+<span class="math">\(\newcommand{\min}{\mathop{\text{min}}}\)</span>
+<span class="math">\(\newcommand{\m}{\vec{m}}\)</span>
+<span class="math">\(\newcommand{\n}{\vec{n}}\)</span>
+<span class="math">\(\newcommand{\p}{\vec{p}}\)</span>
+<span class="math">\(\newcommand{\q}{\vec{q}}\)</span>
+<span class="math">\(\newcommand{\r}{\vec{r}}\)</span>
+<span class="math">\(\newcommand{\transpose}{{\mathsf T}}\)</span>
+<span class="math">\(\newcommand{\tr}[1]{\mathop{\text{tr}}{\left(#1\right)}}\)</span>
+<span class="math">\(\newcommand{\s}{\vec{s}}\)</span>
+<span class="math">\(\newcommand{\t}{\vec{t}}\)</span>
+<span class="math">\(\newcommand{\u}{\vec{u}}\)</span>
+<span class="math">\(\newcommand{\vec}[1]{\mathbf{#1}}\)</span>
+<span class="math">\(\newcommand{\x}{\vec{x}}\)</span>
+<span class="math">\(\newcommand{\y}{\vec{y}}\)</span>
+<span class="math">\(\newcommand{\z}{\vec{z}}\)</span>
+<span class="math">\(\newcommand{\0}{\vec{0}}\)</span>
+<span class="math">\(\renewcommand{\v}{\vec{v}}\)</span>
+<!-- https://github.com/mathjax/MathJax/issues/1766 -->
+<span class="math">\(\renewcommand{\hat}[1]{\widehat{#1}}\)</span>
+</div>
+
+<h1 id="computergraphics–raycasting">Computer Graphics – Ray Casting</h1>
+
+<blockquote>
+<p><strong>To get started:</strong> Clone this repository by issuing:</p>
+
+<pre><code>git clone http://github.com/alecjacobson/computer-graphics-ray-casting.git
+</code></pre>
+</blockquote>
+
+<h2 id="background">Background</h2>
+
+<h3 id="readsections4.1-4.4offundamentalsofcomputergraphics4thedition.">Read Sections 4.1&#8211;4.4 of <em>Fundamentals of Computer Graphics (4th Edition)</em>.</h3>
+
+<p><em>We will cover basic shading, shadows and reflection in the next assignment.</em></p>
+
+<h3 id="sceneobjects">Scene Objects</h3>
+
+<p>This assignment will introduce a few <em>primitives</em> for 3D geometry:
+<a href="https://en.wikipedia.org/wiki/Sphere">spheres</a>,
+<a href="https://en.wikipedia.org/wiki/Plane_(geometry)">planes</a> and triangles. We&#8217;ll
+get a first glimpse that more complex shapes can be created as a collection of
+these primitives.</p>
+
+<p>The core interaction that we need to start visualizing these shapes is
+ray-object intersection. A ray emanating from a point <span class="math">\(\mathbf{e} ∈ \mathbb{R}³\)</span>
+(e.g., a camera&#8217;s &#8220;eye&#8221;) in a direction <span class="math">\(\mathbf{d} ∈ \mathbb{R}³\)</span> can be
+<em>parameterized</em> by a single number <span class="math">\(t ∈ [0,∞)\)</span>. Changing the value of <span class="math">\(t\)</span> picks
+a different point along the ray. Remember, a ray is a 1D object so we only need
+this one &#8220;knob&#8221; or parameter to move along it. The <a href="https://en.wikipedia.org/wiki/Parametric_equation">parametric
+function</a> for a ray written
+in <a href="https://en.wikipedia.org/wiki/Vector_notation">vector notation</a> is:</p>
+
+<p>$$
+\mathbf{r}(t) = \mathbf{e} + t\mathbf{d}.
+$$</p>
+
+<p>For each object in our scene we need to find out:</p>
+
+<ol>
+<li>is there some value <span class="math">\(t\)</span> such that the ray <span class="math">\(\mathbf{r}(t)\)</span> lies on the
+ surface of the object?</li>
+<li>if so, what is that value of <span class="math">\(t\)</span> (and thus what is the position of
+ intersection <span class="math">\(\mathbf{r}(t)∈\mathbb{R}³\)</span></li>
+<li>and what is the surface&#8217;s <a href="https://en.wikipedia.org/wiki/Unit_vector">unit</a>
+ <a href="https://en.wikipedia.org/wiki/Normal_(geometry)">normal vector</a> at the
+ point of intersection.</li>
+</ol>
+
+<p>For each object, we should carefully consider how <em>many</em> ray-object
+intersections are possible for a given ray (always one? sometimes two? ever
+zero?) and in the presence of multiple answers choose the closest one.</p>
+
+<blockquote>
+<p><strong>Question:</strong> Why keep the closest hit?</p>
+
+<p><strong>Hint:</strong> 🤦🏻</p>
+</blockquote>
+
+<p>In this assignment, we&#8217;ll use simple representations for primitives. For
+example, for a plane we&#8217;ll store a point on the plane and the normal anywhere on
+the plane.</p>
+
+<blockquote>
+<p><strong>Question:</strong> How many numbers are needed to uniquely determine a plane?</p>
+
+<p><strong>Hint:</strong> A point position (3) + normal vector (3) is too many. Consider how
+many numbers are needed to specify a line in 2D.</p>
+</blockquote>
+
+<h3 id="camera">Camera</h3>
+
+<p>In this assignment we will pretend that our &#8220;camera&#8221; or &#8220;eye&#8221; looking into the
+scene is shrunk to a single 3D point <span class="math">\(\mathbf{e} ∈ \mathbb{R}³\)</span> in space. The
+image rectangle (e.g., 640 pixels by 360 pixels) is placed so the image center
+is directly <em>in front</em> of the
+&#8220;eye&#8221; point at a certain <a href="https://en.wikipedia.org/wiki/Focal_length">&#8220;focal
+length&#8221;</a> <span class="math">\(d\)</span>. The image of pixels is
+scaled to match the given <code>width</code> and <code>height</code> defined by the <code>camera</code>. Camera
+is equipped with a direction that moves left-right across the image
+<span class="math">\(\mathbf{u}\)</span>, up-down <span class="math">\(\mathbf{v}\)</span>, and from the &#8220;eye&#8221; to the image
+<span class="math">\(-\mathbf{w}\)</span>. Keep in mind that the <code>width</code> and <code>height</code> are measure in the
+units of the <em>scene</em>, not in the number of pixels. For example, we can fit a
+1024x1024 image into a camera with width <span class="math">\(=1\)</span> and height <span class="math">\(=1\)</span>.</p>
+
+<blockquote>
+<p><strong>Question:</strong> Given that <span class="math">\(\mathbf{u}\)</span> points right and <span class="math">\(\mathbf{v}\)</span> points up,
+why does <em>minus</em> <span class="math">\(\mathbf{w}\)</span> point into the scene?</p>
+
+<p><strong>Hint:</strong> ☝️</p>
+</blockquote>
+
+<figure>
+<img src="images/ray-casting-camera.png" alt="Our pinhole
+perspective
+camera with notation (inspired by )" />
+<figcaption>Our <a href="https://en.wikipedia.org/wiki/Pinhole_camera">pinhole</a>
+<a href="https://en.wikipedia.org/wiki/3D_projection#Perspective_projection">perspective</a>
+camera with notation (inspired by [Marschner &amp; Shirley
+2015])</figcaption>
+</figure>
+
+<h3 id="trianglesoup">Triangle Soup</h3>
+
+<p>Triangles are the simplest 2D polygon. On the computer we can represent a
+triangle efficiently by storing its 3 corner positions. To store a triangle
+floating in 3D, each corner position is stored as 3D position.</p>
+
+<p>A simple, yet effective and popular way to approximate a complex shape is to
+store list of (many and small) triangles covering the shape&#8217;s surface. If we
+place no assumptions on these triangles (i.e., they don&#8217;t have to be connected
+together or non-intersecting), then we call this collection a &#8220;<a href="https://en.wikipedia.org/wiki/Polygon_soup">triangle
+soup</a>&#8221;. </p>
+
+<p>When considering the intersection of a ray and a triangle soup, we simply need
+to find the <em>first</em> triangle in the soup that the ray intersects first.</p>
+
+<h3 id="falsecolorimages">False color images</h3>
+
+<p>Our scene does not yet have light so the only accurate rendering would be a
+pitch black image. Since this is rather boring, we&#8217;ll create false or pseudo
+renderings of the information we computed during ray-casting.</p>
+
+<h4 id="objectidimage">Object ID image</h4>
+
+<p>The simplest image we&#8217;ll make is just assigning each object to a color. If a
+pixel&#8217;s closest hit comes from the <span class="math">\(i\)</span>-th object then we paint it with the <span class="math">\(i\)</span>-th
+rgb color in our <code>color_map</code>.</p>
+
+<figure>
+<img src="images/sphere-packing-id.png" alt="This object id image shows which object is closest along the ray passing
+through each pixel. Each object is assigned to its own unique color." />
+<figcaption>This &#8220;object id image&#8221; shows which object is <em>closest</em> along the ray passing
+through each pixel. Each object is assigned to its own unique color.</figcaption>
+</figure>
+
+<h4 id="depthimages">Depth images</h4>
+
+<p>The object ID image gives us very little sense of 3D. The simplest image to
+encode the 3D geometry of a scene is a <a href="https://en.wikipedia.org/wiki/Depth_map">depth
+image</a>. Since the range of depth is
+generally <span class="math">\([d,∞)\)</span> where <span class="math">\(d\)</span> is the distance from the camera&#8217;s eye to the camera
+plane, we must map this to the range <span class="math">\([0,1]\)</span> to create a <a href="https://en.wikipedia.org/wiki/Grayscale">grayscale
+image</a>. In this assignment we use a
+simple non-linear mapping based on reasonable default values.</p>
+
+<figure>
+<img src="images/sphere-packing-depth.png" alt="This grayscale depth image shows the distance to the nearest object along
+the ray through each pixel. Shorter distances are brighter than farther
+distances." />
+<figcaption>This grayscale &#8220;depth image&#8221; shows the distance to the nearest object along
+the ray through each pixel. Shorter distances are brighter than farther
+distances.</figcaption>
+</figure>
+
+<h4 id="normalimages">Normal images</h4>
+
+<p>The depth image technically captures all geometric information visible by
+casting rays from the camera, but interesting surfaces will appear dull because
+small details will have nearly the same depth. During ray-object intersection
+we compute or return the surface normal vector <span class="math">\(\mathbf{n} ∈ \mathbf{R}³\)</span> at the
+point of intersection. Since the normal vector is <a href="https://en.wikipedia.org/wiki/Unit_vector">unit
+length</a>, each coordinate value is
+between <span class="math">\([-1,1]\)</span>. We can map the normal vector to an rgb value in a linear way
+(e.g., <span class="math">\(r = ½ x + ½\)</span>).</p>
+
+<p>Although all of these images appear cartoonish and garish, together they reveal
+that ray-casting can probe important pixel-wise information in the 3D scene.</p>
+
+<figure>
+<img src="images/sphere-packing-normal.png" alt="This colorized normal image shows surface normal at the nearest point in the
+scene along the ray through each pixel." />
+<figcaption>This colorized &#8220;normal image&#8221; shows surface normal at the nearest point in the
+scene along the ray through each pixel.</figcaption>
+</figure>
+
+<h2 id="tasks">Tasks</h2>
+
+<p>In this assignment you will implement core routines for casting rays into a 3D
+and collect &#8220;hit&#8221; information where they intersect 3D objects.</p>
+
+<h2 id="whitelist">Whitelist</h2>
+
+<p>This assignment uses the <a href="https://eigen.tuxfamily.org">Eigen</a> for numerical
+linear algebra. This library is used in both professional and academic numerical
+computing. We will use its <code>Eigen::Vector3d</code> as a double-precision 3D vector
+class to store <span class="math">\(x,y,z\)</span> data for 3D points and 3D vectors. You can add (<code>+</code>)
+vectors and points together, multiply them against scalars (<code>*</code>) and compute
+vector <a href="https://en.wikipedia.org/wiki/Dot_product">dot products</a> (<code>a.dot(b)</code>).
+In addition, <code>#include &lt;Eigen/Geometry&gt;</code> has useful geometric functions such as
+3D vector <a href="https://en.wikipedia.org/wiki/Cross_product">cross product</a>
+(<code>a.cross(b)</code>).</p>
+
+<h3 id="srcwrite_ppm.cpp"><code>src/write_ppm.cpp</code></h3>
+
+<p>See
+<a href="https://github.com/alecjacobson/computer-graphics-raster-images#srcwrite_ppmcpp">computer-graphics-raster-images</a>.</p>
+
+<h3 id="srcviewing_ray.cpp"><code>src/viewing_ray.cpp</code></h3>
+
+<p>Construct a viewing ray given a camera and subscripts to a pixel.</p>
+
+<h3 id="srcfirst_hit.cpp"><code>src/first_hit.cpp</code></h3>
+
+<p>Find the first (visible) hit given a ray and a collection of scene objects</p>
+
+<h3 id="sphere::intersect_rayinsrcsphere.cpp"><code>Sphere::intersect_ray</code> in <code>src/Sphere.cpp</code></h3>
+
+<p>Intersect a sphere with a ray.</p>
+
+<h3 id="plane::intersect_rayinsrcplane.cpp"><code>Plane::intersect_ray</code> in <code>src/Plane.cpp</code></h3>
+
+<p>Intersect a plane with a ray.</p>
+
+<figure>
+<img src="images/sphere-and-plane-id.png" alt="Running ./raycasting should produce id.ppm that looks like this." />
+<figcaption>Running <code>./raycasting</code> should produce <code>id.ppm</code> that looks like this.</figcaption>
+</figure>
+
+<figure>
+<img src="images/sphere-and-plane-depth.png" alt="Running ./raycasting should produce depth.ppm that looks like this." />
+<figcaption>Running <code>./raycasting</code> should produce <code>depth.ppm</code> that looks like this.</figcaption>
+</figure>
+
+<figure>
+<img src="images/sphere-and-plane-normal.png" alt="Running ./raycasting should produce normal.ppm that looks like this." />
+<figcaption>Running <code>./raycasting</code> should produce <code>normal.ppm</code> that looks like this.</figcaption>
+</figure>
+
+<h3 id="triangle::intersect_rayinsrctriangle.cpp"><code>Triangle::intersect_ray</code> in <code>src/Triangle.cpp</code></h3>
+
+<p>Intersect a triangle with a ray.</p>
+
+<figure>
+<img src="images/triangle-id.png" alt="Running ./raycasting ../data/triangle.json should produce id.ppm that looks like this." />
+<figcaption>Running <code>./raycasting ../data/triangle.json</code> should produce <code>id.ppm</code> that looks like this.</figcaption>
+</figure>
+
+<h3 id="trianglesoup::intersect_rayinsrctrianglesoup.cpp"><code>TriangleSoup::intersect_ray</code> in <code>src/TriangleSoup.cpp</code></h3>
+
+<p>Intersect a triangle soup with a ray.</p>
+
+<figure>
+<img src="images/bunny.gif" alt="Running ./raycasting ../data/bunny.json should produce images that like this. Note: This example may take a few seconds to compute." />
+<figcaption>Running <code>./raycasting ../data/bunny.json</code> should produce images that like this. <em><strong>Note:</strong> This example may take a few seconds to compute.</em></figcaption>
+</figure>
+
+<blockquote>
+<p><strong>Pro Tip:</strong> Mac OS X users can quickly preview the output images using</p>
+
+<pre><code>./raycasting &amp;&amp; qlmanage -p {id,depth,normal}.ppm
+</code></pre>
+
+<p>Flicking the left and right arrows will toggle through the results</p>
+
+<p><strong>Pro Tip:</strong> After you&#8217;re confident that your program is working <em>correctly</em>,
+you can dramatic improve the performance simply by enabling <a href="https://en.wikipedia.org/wiki/Optimizing_compiler">compiler
+optimization</a>: </p>
+
+<pre><code>mkdir build-release
+cd build-release
+cmake ../ -DCMAKE_BUILD_TYPE=Release
+make
+</code></pre>
+</blockquote>
+
+</body>
+</html>
