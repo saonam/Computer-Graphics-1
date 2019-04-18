@@ -1,11 +1,5 @@
 # Computer Graphics – Ray Tracing
 
-> **To get started:** Clone this repository using:
-> 
->     git clone http://github.com/dilevin/computer-graphics-ray-tracing.git
->
-> **Do not fork:** Clicking "Fork" will create a _public_ repository. If you'd like to use GitHub while you work on your assignment, then mirror this repo as a new _private_ repository: https://stackoverflow.com/questions/10065526/github-how-to-make-a-fork-of-public-repository-private
-
 ## Background
 
 ### Read Sections 4.5-4.9 of _Fundamentals of Computer Graphics (4th Edition)_.

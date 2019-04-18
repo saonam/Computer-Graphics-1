@@ -1,10 +1,5 @@
 # Computer Graphics – Kinematics
 
-> **To get started:** Clone this repository using
-> 
->     git clone --recursive http://github.com/dilevin/computer-graphics-kinematics.git
->
-
 ## Background
 
 ![](images/robot-arm.gif)
